@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy Marleni Gonzales Diaz — Candidata al Senado 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav>
+  <a href="#inicio" class="logo">
+    <svg class="logo-icon" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2L3 9v14c0 10.5 7.3 20.3 17 23 9.7-2.7 17-12.5 17-23V9L20 2z" fill="#F5C400" stroke="#C9A000" stroke-width="1.2"/>
+      <path d="M20 2L3 9v14c0 10.5 7.3 20.3 17 23V2z" fill="#C9A000" opacity=".25"/>
+      <path d="M20 13l1.5 4.6H26l-3.9 2.8 1.5 4.6L20 22.2l-3.6 2.8 1.5-4.6L14 17.6h4.5z" fill="var(--dark)"/>
+    </svg>
+    <div class="logo-text">
+      <strong>Lucy M. Gonzales Diaz</strong>
+      <small>Candidata al Senado · 2026</small>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#biografia">Biografía</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
+    <li><a href="#enfoque">Mi Enfoque</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#convocatorias">Convocatorias</a></li>
+    <li><a href="#convocatoria">Únete</a></li>
+  </ul>
+
+  <a href="#convocatoria" class="nav-cta">Unirse</a>
+
+  <button class="burger" id="burger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#inicio" onclick="closeMobile()">Inicio</a>
+  <a href="#biografia" onclick="closeMobile()">Biografía</a>
+  <a href="#trayectoria" onclick="closeMobile()">Trayectoria</a>
+  <a href="#enfoque" onclick="closeMobile()">Mi Enfoque</a>
+  <a href="#galeria" onclick="closeMobile()">Galería</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#convocatorias" onclick="closeMobile()">Convocatorias</a>
+  <a href="#convocatoria" onclick="closeMobile()">Únete</a>
+</div>
+
+
+<!-- ══ MODAL PROMOCIONAL ══════════════════════════════ -->
+<div class="promo-overlay" id="promoOverlay">
+  <div class="promo-modal" id="promoModal">
+    <button class="promo-close" id="promoClose" aria-label="Cerrar">&#x2715;</button>
+
+    <div class="promo-body">
+      <!-- REEMPLAZAR con tu imagen promocional con QR:
+           <img src="promo-qr.jpg" alt="Únete al movimiento · Lucy 2026" class="promo-img"> -->
+      <div class="promo-img-ph">
+        <svg width="48" height="48" viewBox="0 0 72 72" fill="none">
+          <rect x="8" y="8" width="24" height="24" rx="2" stroke="#bbb" stroke-width="1.5"/>
+          <rect x="40" y="8" width="24" height="24" rx="2" stroke="#bbb" stroke-width="1.5"/>
+          <rect x="8" y="40" width="24" height="24" rx="2" stroke="#bbb" stroke-width="1.5"/>
+          <rect x="13" y="13" width="14" height="14" rx="1" fill="#bbb" opacity=".3"/>
+          <rect x="45" y="13" width="14" height="14" rx="1" fill="#bbb" opacity=".3"/>
+          <rect x="13" y="45" width="14" height="14" rx="1" fill="#bbb" opacity=".3"/>
+          <rect x="42" y="42" width="4" height="4" fill="#bbb" opacity=".5"/>
+          <rect x="50" y="42" width="4" height="4" fill="#bbb" opacity=".5"/>
+          <rect x="58" y="42" width="4" height="4" fill="#bbb" opacity=".5"/>
+          <rect x="42" y="50" width="4" height="4" fill="#bbb" opacity=".5"/>
+          <rect x="54" y="54" width="8" height="8" fill="#bbb" opacity=".5"/>
+        </svg>
+        <span>Imagen promocional con QR<br>500 × 580 px recomendado</span>
+      </div>
+
+      <div class="promo-info">
+        <div class="promo-tag">¡Únete ahora!</div>
+        <h3 class="promo-title">Súmate al <em>movimiento</em> ciudadano</h3>
+        <p class="promo-desc">Escanea el código QR o haz clic en el botón para unirte al grupo de WhatsApp y ser parte del cambio que el Perú necesita.</p>
+        <a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="promo-wa-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Unirme al WhatsApp
+        </a>
+        <button class="promo-skip" id="promoSkip">Continuar al sitio →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ 1. INICIO ═════════════════════════════════════ -->
+<section id="inicio">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Senado de la República · Lima 2026</div>
+    <h1 class="hero-title">
+      Lorem ipsum dolor<br>sit amet,<br><em>consectetur adipiscing.</em>
+    </h1>
+    <p class="hero-quote">
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
+    </p>
+    <div class="hero-btns">
+      <a href="#convocatoria" class="btn btn-yellow">Únete al movimiento</a>
+      <a href="#biografia" class="btn btn-outline">Conoce a Lucy</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">15+</div>
+        <div class="stat-l">años en gestión pública</div>
+      </div>
+      <div>
+        <div class="stat-n">45K</div>
+        <div class="stat-l">personas beneficiadas</div>
+      </div>
+      <div>
+        <div class="stat-n">120K</div>
+        <div class="stat-l">ciudadanos comprometidos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="ph">
+      <svg width="60" height="60" viewBox="0 0 72 72" fill="none">
+        <circle cx="36" cy="26" r="14" stroke="#bbb" stroke-width="1.5"/>
+        <path d="M6 66c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#bbb" stroke-width="1.5"/>
+      </svg>
+      <span>Foto principal<br>600 × 700 px</span>
+    </div>
+    <div class="hero-badge">Senado · Lima 2026</div>
+  </div>
+</section>
+
+
+<!-- ══ 2. BIOGRAFIA ══════════════════════════════════ -->
+<div id="biografia" class="section">
+<div class="container">
+  <div class="bio-grid fade">
+
+    <div class="bio-img-wrap">
+      <div class="bio-img ph" style="aspect-ratio:4/5;">
+        <svg width="50" height="50" viewBox="0 0 72 72" fill="none">
+          <circle cx="36" cy="26" r="14" stroke="#bbb" stroke-width="1.5"/>
+          <path d="M6 66c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#bbb" stroke-width="1.5"/>
+        </svg>
+        <span>Retrato oficial<br>480 × 600 px</span>
+      </div>
+      <div class="bio-accent"></div>
+    </div>
+
+    <div class="bio-text">
+      <div class="tag">Quién soy</div>
+      <h2 class="title">Raíces profundas,<br>miras al <span>futuro.</span></h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</strong></p>
+
+      <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <blockquote>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      </blockquote>
+
+      <p><strong>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</strong> sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+
+      <div class="values-row">
+        <div class="val-chip">Integridad</div>
+        <div class="val-chip">Compromiso</div>
+        <div class="val-chip">Transparencia</div>
+        <div class="val-chip">Servicio</div>
+        <div class="val-chip">Inclusión</div>
+        <div class="val-chip">Visión</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<!-- ══ 3. TRAYECTORIA ═══════════════════════════════ -->
+<div id="trayectoria" class="section section-alt">
+<div class="container">
+
+  <div class="sec-head fade">
+    <div class="tag">Experiencia</div>
+    <h2 class="title">Una vida de <span>servicio</span> y resultados.</h2>
+    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+  <div class="logros-grid fade">
+    <div class="logro-card">
+      <div class="logro-img">
+        <div class="ph" style="height:100%;"><span>480 × 270 px</span></div>
+      </div>
+      <div class="logro-body">
+        <h4>Lorem ipsum dolor sit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+    <div class="logro-card">
+      <div class="logro-img">
+        <div class="ph" style="height:100%;"><span>480 × 270 px</span></div>
+      </div>
+      <div class="logro-body">
+        <h4>Consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      </div>
+    </div>
+    <div class="logro-card">
+      <div class="logro-img">
+        <div class="ph" style="height:100%;"><span>480 × 270 px</span></div>
+      </div>
+      <div class="logro-body">
+        <h4>Eiusmod tempor incididunt</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-wrap fade">
+    <div class="tl-card">
+      <div class="tl-img">
+        <div class="ph"><span>140 × 180 px</span></div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-year">2022 — actualidad</div>
+        <h4>Lorem Ipsum Dolor Sit Amet</h4>
+        <div class="tl-org">Institución Lorem Ipsum del Perú</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+      </div>
+    </div>
+    <div class="tl-card">
+      <div class="tl-img">
+        <div class="ph"><span>140 × 180 px</span></div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-year">2018 — 2022</div>
+        <h4>Consectetur Adipiscing Elit</h4>
+        <div class="tl-org">Organismo Lorem Ipsum — Lima</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis nostrud exercitation ullamco laboris nisi.</p>
+      </div>
+    </div>
+    <div class="tl-card">
+      <div class="tl-img">
+        <div class="ph"><span>140 × 180 px</span></div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-year">2014 — 2018</div>
+        <h4>Sed Do Eiusmod Tempor</h4>
+        <div class="tl-org">Entidad Pública Lorem Ipsum</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquip ex ea commodo consequat duis aute.</p>
+      </div>
+    </div>
+    <div class="tl-card">
+      <div class="tl-img">
+        <div class="ph"><span>140 × 180 px</span></div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-year">2003 — 2009</div>
+        <h4>Ut Labore Et Dolore Magna</h4>
+        <div class="tl-org">Fundación Lorem Ipsum</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ 4. MI ENFOQUE ════════════════════════════════ -->
+<div id="enfoque" class="section">
+<div class="container">
+
+  <div class="sec-head fade">
+    <div class="tag">Propuestas</div>
+    <h2 class="title">Mi visión para el <span>Perú.</span></h2>
+    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
+  </div>
+
+  <div class="props-grid fade">
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <div class="prop-img-num">01</div>
+      </div>
+      <div class="prop-body">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <div class="prop-img-num">02</div>
+      </div>
+      <div class="prop-body">
+        <h4>Consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud exercitation.</p>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <div class="prop-img-num">03</div>
+      </div>
+      <div class="prop-body">
+        <h4>Sed do eiusmod tempor</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.</p>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <div class="prop-img-num">04</div>
+      </div>
+      <div class="prop-body">
+        <h4>Ut labore et dolore magna</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <div class="prop-img-num">05</div>
+      </div>
+      <div class="prop-body">
+        <h4>Quis nostrud exercitation</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <div class="prop-img-num">06</div>
+      </div>
+      <div class="prop-body">
+        <h4>Ullamco laboris nisi aliquip</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut perspiciatis unde omnis iste natus error sit.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ 5. GALERÍA ════════════════════════════════════ -->
+<div id="galeria" class="section section-alt">
+<div class="container">
+
+  <div class="sec-head fade">
+    <h2 class="title">Un Recorrido por <em>mi Compromiso con el Perú</em></h2>
+    <div class="gal-tabs">
+      <button class="gal-tab active" data-tab="politica">Vida política</button>
+      <button class="gal-tab" data-tab="campo">Trabajo de campo</button>
+      <button class="gal-tab" data-tab="profesional">Labor profesional</button>
+    </div>
+  </div>
+
+  <div class="gal-panel active" id="tab-politica">
+    <div class="gal-mosaic">
+      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
+      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi gi-big" onclick="openLb(this)"><div class="ph"><span>600×360px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+    </div>
+  </div>
+
+  <div class="gal-panel" id="tab-campo">
+    <div class="gal-mosaic">
+      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi gi-wide" onclick="openLb(this)"><div class="ph"><span>600×180px</span></div></div>
+      <div class="gi gi-big" onclick="openLb(this)"><div class="ph"><span>600×360px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+    </div>
+  </div>
+
+  <div class="gal-panel" id="tab-profesional">
+    <div class="gal-mosaic">
+      <div class="gi gi-wide" onclick="openLb(this)"><div class="ph"><span>600×180px</span></div></div>
+      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi gi-big" onclick="openLb(this)"><div class="ph"><span>600×360px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLb(event)">
+  <button class="lb-close">&#x2715;</button>
+  <img class="lb-img" id="lb-img" src="" alt="">
+</div>
+
+
+<!-- ══ 6. BLOG ══════════════════════════════════════ -->
+<div id="blog" class="section">
+<div class="container">
+
+  <div class="blog-header fade">
+    <div>
+      <div class="tag">Blog</div>
+      <h2 class="title">Ideas, análisis y <span>posición.</span></h2>
+    </div>
+    <a href="#" class="btn btn-outline">Ver todos</a>
+  </div>
+
+  <div class="blog-grid fade">
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="ph" style="height:100%;"><span>700 × 460 px</span></div>
+        <div class="blog-cat">Análisis</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">15 de febrero, 2026 · 8 min de lectura</div>
+        <h4>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation.</p>
+        <a href="#" class="link-more">Leer artículo →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="ph" style="height:100%;"><span>400 × 250 px</span></div>
+        <div class="blog-cat">Opinión</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">10 de febrero, 2026 · 5 min</div>
+        <h4>Lorem ipsum dolor sit amet consectetur adipiscing</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+        <a href="#" class="link-more">Leer →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="ph" style="height:100%;"><span>400 × 250 px</span></div>
+        <div class="blog-cat">Propuesta</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">5 de febrero, 2026 · 6 min</div>
+        <h4>Ut labore et dolore magna aliqua enim veniam</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis nostrud exercitation ullamco laboris.</p>
+        <a href="#" class="link-more">Leer →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ 7. CONVOCATORIAS ══════════════════════════════ -->
+<div id="convocatorias" class="section conv-section">
+<div class="container">
+
+  <div class="sec-head fade">
+    <div class="tag">Participa</div>
+    <h2 class="title">Convocatorias <span>abiertas.</span></h2>
+    <p class="subtitle">Forma parte de las iniciativas ciudadanas y mesas de trabajo. Tu participación transforma el Perú.</p>
+  </div>
+
+  <div class="conv-grid fade">
+
+    <!-- Card 1 -->
+    <div class="conv-card">
+      <div class="conv-img-wrap">
+        <!-- REEMPLAZAR: <img src="conv1.jpg" alt="Convocatoria Educación"> -->
+        <div class="ph conv-ph">
+          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
+            <rect x="8" y="16" width="56" height="40" rx="3" stroke="#bbb" stroke-width="1.5"/>
+            <path d="M8 28h56" stroke="#bbb" stroke-width="1.5"/>
+            <path d="M36 8v8M28 8h16" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>480 × 320 px</span>
+        </div>
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Educación</div>
+        <h4 class="conv-title">Mesa de Trabajo — Educación Pública</h4>
+        <p class="conv-desc">Únete al equipo que diseña propuestas para mejorar la calidad educativa en Lima y regiones.</p>
+        <a href="#" class="conv-btn">
+          <span>Participar</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2 — Destacada -->
+    <div class="conv-card conv-card--featured">
+      <div class="conv-img-wrap">
+        <!-- REEMPLAZAR: <img src="conv2.jpg" alt="Voluntariado"> -->
+        <div class="ph conv-ph conv-ph--dark">
+          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
+            <circle cx="36" cy="26" r="14" stroke="#666" stroke-width="1.5"/>
+            <path d="M6 66c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#666" stroke-width="1.5"/>
+          </svg>
+          <span style="color:#555;">480 × 320 px</span>
+        </div>
+        <div class="conv-badge conv-badge--featured">Destacada</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category conv-category--featured">Ciudadanía</div>
+        <h4 class="conv-title conv-title--featured">¿Eres parte del cambio?</h4>
+        <p class="conv-desc conv-desc--featured">Regístrate como voluntario y lleva el mensaje de transformación a tu distrito. ¡Te necesitamos en cada rincón del Perú!</p>
+        <a href="#" class="conv-btn conv-btn--featured">
+          <span>Participar</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="conv-card">
+      <div class="conv-img-wrap">
+        <!-- REEMPLAZAR: <img src="conv3.jpg" alt="Seguridad"> -->
+        <div class="ph conv-ph">
+          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
+            <path d="M36 8L56 18v18c0 14-9.5 26-20 30C25.5 62 16 50 16 36V18L36 8z" stroke="#bbb" stroke-width="1.5"/>
+          </svg>
+          <span>480 × 320 px</span>
+        </div>
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Seguridad</div>
+        <h4 class="conv-title">Mesa de Seguridad Ciudadana</h4>
+        <p class="conv-desc">Trabajemos juntos en propuestas concretas para reducir la inseguridad en nuestras comunidades.</p>
+        <a href="#" class="conv-btn">
+          <span>Participar</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="conv-card">
+      <div class="conv-img-wrap">
+        <!-- REEMPLAZAR: <img src="conv4.jpg" alt="Vivienda"> -->
+        <div class="ph conv-ph">
+          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
+            <path d="M12 56V30l24-18 24 18v26H44V40H28v16z" stroke="#bbb" stroke-width="1.5"/>
+          </svg>
+          <span>480 × 320 px</span>
+        </div>
+        <div class="conv-badge conv-badge--soon">Próximamente</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Vivienda</div>
+        <h4 class="conv-title">Foro: Vivienda Digna para Todos</h4>
+        <p class="conv-desc">Debate abierto sobre políticas de acceso a vivienda. Inscríbete y comparte tu experiencia.</p>
+        <a href="#" class="conv-btn conv-btn--ghost">
+          <span>Inscribirme</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /.conv-grid -->
+
+  <!-- Banner inferior -->
+  <div class="conv-banner fade">
+    <div class="conv-banner-text">
+      <strong>¿Tienes una propuesta ciudadana?</strong>
+      <p>Escríbenos y súmate a las mesas de trabajo que estamos construyendo para el Perú.</p>
+    </div>
+    <a href="#convocatoria" class="btn btn-yellow">Proponer iniciativa</a>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ 8. CONVOCATORIA WhatsApp ══════════════════════ -->
+<div id="convocatoria" class="section section-dark">
+<div class="container">
+  <div class="wa-section">
+
+    <div class="wa-left fade">
+      <div class="tag">Convocatoria</div>
+      <h2 class="title">Súmate al <span>movimiento.</span></h2>
+      <p class="wa-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>
+
+      <div class="wa-steps">
+        <div class="wa-step">
+          <div class="wa-step-num">1</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore.</p>
+        </div>
+        <div class="wa-step">
+          <div class="wa-step-num">2</div>
+          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="wa-step">
+          <div class="wa-step-num">3</div>
+          <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+        </div>
+      </div>
+
+      <a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="wa-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        Unirme al grupo de WhatsApp
+      </a>
+    </div>
+
+    <div class="wa-right fade">
+      <div class="wa-img-ph ph">
+        <svg width="52" height="52" viewBox="0 0 72 72" fill="none">
+          <circle cx="24" cy="28" r="10" stroke="#555" stroke-width="1.5"/>
+          <circle cx="48" cy="28" r="10" stroke="#555" stroke-width="1.5"/>
+          <path d="M4 64c0-11.046 8.954-20 20-20h24c11.046 0 20 8.954 20 20" stroke="#555" stroke-width="1.5"/>
+        </svg>
+        <span>Foto comunidad<br>600 × 500 px</span>
+      </div>
+      <div class="wa-counter">
+        <div class="wa-counter-n">+2,400</div>
+        <div class="wa-counter-l">personas ya se sumaron</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<!-- ══ FOOTER ════════════════════════════════════════ -->
+<footer>
+<div class="footer-inner">
+  <div class="footer-top">
+    <div class="fcol">
+      <span class="fb-name">Lucy Marleni Gonzales Diaz</span>
+      <span class="fb-sub">Candidata al Senado · Lima 2026</span>
+      <p class="fb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <div class="socials">
+        <a href="#" class="soc">f</a>
+        <a href="#" class="soc">𝕏</a>
+        <a href="#" class="soc">ig</a>
+        <a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#biografia">Biografía</a></li>
+        <li><a href="#trayectoria">Trayectoria</a></li>
+        <li><a href="#enfoque">Mi Enfoque</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#convocatorias">Convocatorias</a></li>
+        <li><a href="#convocatoria">Únete</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Propuestas</h5>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Consectetur adipiscing</a></li>
+        <li><a href="#">Sed do eiusmod</a></li>
+        <li><a href="#">Ut labore et dolore</a></li>
+        <li><a href="#">Quis nostrud</a></li>
+        <li><a href="#">Ullamco laboris</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="#">Lorem ipsum 441, Lima</a></li>
+        <li><a href="#">(01) 000-0000</a></li>
+        <li><a href="#">contacto@lucy2026.pe</a></li>
+        <li><a href="#">Plan de gobierno (PDF)</a></li>
+        <li><a href="#">Declaración jurada</a></li>
+        <li><a href="#">Prensa y medios</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucy Marleni Gonzales Diaz — Todos los derechos reservados.</p>
+    <p><a href="#">Privacidad</a> · <a href="#">Términos</a></p>
+  </div>
+</div>
+</footer>
+
+
+<!-- ══ BOTÓN FLOTANTE WHATSAPP ════════════════════════ -->
+<a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="wa-float" aria-label="Únete a nuestro WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+  <span class="wa-float-tooltip">¡Únete al movimiento!</span>
+</a>
+
+<script>
+  // Modal promocional — se abre siempre al cargar
+  (function() {
+    const overlay = document.getElementById('promoOverlay');
+    const closeBtn = document.getElementById('promoClose');
+    const skipBtn  = document.getElementById('promoSkip');
+
+    function closeModal() {
+      overlay.classList.add('promo-out');
+      setTimeout(() => { overlay.style.display = 'none'; document.body.style.overflow = ''; }, 350);
+    }
+
+    // Mostrar con pequeño delay para que la página cargue visualmente
+    setTimeout(() => {
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => overlay.classList.add('promo-in'));
+    }, 400);
+
+    closeBtn.addEventListener('click', closeModal);
+    skipBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  })();
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobile() { mobileNav.classList.remove('open'); }
+  document.addEventListener('click', e => {
+    if (!burger.contains(e.target) && !mobileNav.contains(e.target)) closeMobile();
+  });
+
+  document.querySelectorAll('.gal-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.gal-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.gal-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  function openLb(el) {
+    const img = el.querySelector('img');
+    if (!img) return;
+    document.getElementById('lb-img').src = img.src;
+    document.getElementById('lb-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(e) {
+    if (!e || e.target !== document.getElementById('lb-img')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.querySelector('.lb-close').addEventListener('click', () => closeLb());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+</script>
+</body>
+</html>
