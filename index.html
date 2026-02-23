@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucy Marleni Gonzales Diaz — Candidata a Diputada 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Lucy Marleni Gonzales Diaz — Candidata al Senado 2026</title>
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -12,15 +11,8 @@
 <!-- ══ NAV ══════════════════════════════════════════ -->
 <nav>
   <a href="#inicio" class="logo">
-    <svg class="logo-icon" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 2L3 9v14c0 10.5 7.3 20.3 17 23 9.7-2.7 17-12.5 17-23V9L20 2z" fill="#F5C400" stroke="#C9A000" stroke-width="1.2"/>
-      <path d="M20 2L3 9v14c0 10.5 7.3 20.3 17 23V2z" fill="#C9A000" opacity=".25"/>
-      <path d="M20 13l1.5 4.6H26l-3.9 2.8 1.5 4.6L20 22.2l-3.6 2.8 1.5-4.6L14 17.6h4.5z" fill="var(--dark)"/>
-    </svg>
-    <div class="logo-text">
-      <strong>Lucy M. Gonzales Diaz</strong>
-      <small>Candidata a Diputada · 2026</small>
-    </div>
+    <!-- ★ LOGO: reemplaza "logo-campana.png" con el nombre real de tu archivo -->
+    <img src="header.png" alt="Lucy Gonzalez — Diputada Lima" class="logo-img">
   </a>
 
   <ul class="nav-links">
@@ -57,24 +49,10 @@
 <div class="promo-overlay" id="promoOverlay">
   <div class="promo-modal" id="promoModal">
     <button class="promo-close" id="promoClose" aria-label="Cerrar">&#x2715;</button>
-
     <div class="promo-body">
-      <div class="promo-img-ph">
-        <svg width="48" height="48" viewBox="0 0 72 72" fill="none">
-          <rect x="8" y="8" width="24" height="24" rx="2" stroke="#bbb" stroke-width="1.5"/>
-          <rect x="40" y="8" width="24" height="24" rx="2" stroke="#bbb" stroke-width="1.5"/>
-          <rect x="8" y="40" width="24" height="24" rx="2" stroke="#bbb" stroke-width="1.5"/>
-          <rect x="13" y="13" width="14" height="14" rx="1" fill="#bbb" opacity=".3"/>
-          <rect x="45" y="13" width="14" height="14" rx="1" fill="#bbb" opacity=".3"/>
-          <rect x="13" y="45" width="14" height="14" rx="1" fill="#bbb" opacity=".3"/>
-          <rect x="42" y="42" width="4" height="4" fill="#bbb" opacity=".5"/>
-          <rect x="50" y="42" width="4" height="4" fill="#bbb" opacity=".5"/>
-          <rect x="58" y="42" width="4" height="4" fill="#bbb" opacity=".5"/>
-          <rect x="42" y="50" width="4" height="4" fill="#bbb" opacity=".5"/>
-          <rect x="54" y="54" width="8" height="8" fill="#bbb" opacity=".5"/>
-        </svg>
-        <span>Imagen promocional con QR<br>500 × 580 px recomendado</span>
-      </div>
+
+      <!-- ★ MODAL: imagen promocional con QR -->
+      <img src="modal-promo-qr.jpg" alt="Únete al movimiento · Lucy 2026" class="promo-img">
 
       <div class="promo-info">
         <div class="promo-tag">¡Únete ahora!</div>
@@ -90,14 +68,14 @@
         <button class="promo-skip" id="promoSkip">Continuar al sitio →</button>
       </div>
     </div>
-
   </div>
 </div>
+
 
 <!-- ══ 1. INICIO ═════════════════════════════════════ -->
 <section id="inicio">
   <div class="hero-left">
-    <div class="hero-eyebrow">Cámara de Diputados · Lima 2026</div>
+    <div class="hero-eyebrow">Senado de la República · Lima 2026</div>
     <h1 class="hero-title">
       Lorem ipsum dolor<br>sit amet,<br><em>consectetur adipiscing.</em>
     </h1>
@@ -125,14 +103,9 @@
   </div>
 
   <div class="hero-right">
-    <div class="ph">
-      <svg width="60" height="60" viewBox="0 0 72 72" fill="none">
-        <circle cx="36" cy="26" r="14" stroke="#bbb" stroke-width="1.5"/>
-        <path d="M6 66c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#bbb" stroke-width="1.5"/>
-      </svg>
-      <span>Foto principal<br>600 × 700 px</span>
-    </div>
-    <div class="hero-badge">Diputada · Lima 2026</div>
+    <!-- ★ HERO: foto principal de Lucy (vertical) -->
+    <img src="modal-principal.jpg" alt="Lucy Marleni Gonzales Diaz">
+    <div class="hero-badge">Senado · Lima 2026</div>
   </div>
 </section>
 
@@ -143,30 +116,20 @@
   <div class="bio-grid fade">
 
     <div class="bio-img-wrap">
-      <div class="bio-img ph" style="aspect-ratio:4/5;">
-        <svg width="50" height="50" viewBox="0 0 72 72" fill="none">
-          <circle cx="36" cy="26" r="14" stroke="#bbb" stroke-width="1.5"/>
-          <path d="M6 66c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#bbb" stroke-width="1.5"/>
-        </svg>
-        <span>Retrato oficial<br>480 × 600 px</span>
-      </div>
+      <!-- ★ BIOGRAFÍA: retrato oficial de Lucy -->
+      <img src="modal-secundario.png" alt="Lucy Gonzalez — Retrato oficial" class="bio-img">
       <div class="bio-accent"></div>
     </div>
 
     <div class="bio-text">
       <div class="tag">Quién soy</div>
       <h2 class="title">Raíces profundas,<br>miras al <span>futuro.</span></h2>
-
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</strong></p>
-
       <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
       <blockquote>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
       </blockquote>
-
       <p><strong>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</strong> sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-
       <div class="values-row">
         <div class="val-chip">Integridad</div>
         <div class="val-chip">Compromiso</div>
@@ -195,7 +158,8 @@
   <div class="logros-grid fade">
     <div class="logro-card">
       <div class="logro-img">
-        <div class="ph" style="height:100%;"><span>480 × 270 px</span></div>
+        <!-- ★ LOGRO 1 -->
+        <img src="logro-1.jpg" alt="Logro 1">
       </div>
       <div class="logro-body">
         <h4>Lorem ipsum dolor sit</h4>
@@ -204,7 +168,8 @@
     </div>
     <div class="logro-card">
       <div class="logro-img">
-        <div class="ph" style="height:100%;"><span>480 × 270 px</span></div>
+        <!-- ★ LOGRO 2 -->
+        <img src="logro-2.jpg" alt="Logro 2">
       </div>
       <div class="logro-body">
         <h4>Consectetur adipiscing elit</h4>
@@ -213,7 +178,8 @@
     </div>
     <div class="logro-card">
       <div class="logro-img">
-        <div class="ph" style="height:100%;"><span>480 × 270 px</span></div>
+        <!-- ★ LOGRO 3 -->
+        <img src="logro-3.jpg" alt="Logro 3">
       </div>
       <div class="logro-body">
         <h4>Eiusmod tempor incididunt</h4>
@@ -225,7 +191,8 @@
   <div class="tl-wrap fade">
     <div class="tl-card">
       <div class="tl-img">
-        <div class="ph"><span>140 × 180 px</span></div>
+        <!-- ★ CARGO 1 (2022–actualidad) -->
+        <img src="cargo-1.jpg" alt="Cargo 2022 actualidad">
       </div>
       <div class="tl-body">
         <div class="tl-year">2022 — actualidad</div>
@@ -236,7 +203,8 @@
     </div>
     <div class="tl-card">
       <div class="tl-img">
-        <div class="ph"><span>140 × 180 px</span></div>
+        <!-- ★ CARGO 2 (2018–2022) -->
+        <img src="cargo-2.jpg" alt="Cargo 2018 2022">
       </div>
       <div class="tl-body">
         <div class="tl-year">2018 — 2022</div>
@@ -247,7 +215,8 @@
     </div>
     <div class="tl-card">
       <div class="tl-img">
-        <div class="ph"><span>140 × 180 px</span></div>
+        <!-- ★ CARGO 3 (2014–2018) -->
+        <img src="cargo-3.jpg" alt="Cargo 2014 2018">
       </div>
       <div class="tl-body">
         <div class="tl-year">2014 — 2018</div>
@@ -258,7 +227,8 @@
     </div>
     <div class="tl-card">
       <div class="tl-img">
-        <div class="ph"><span>140 × 180 px</span></div>
+        <!-- ★ CARGO 4 (2003–2009) -->
+        <img src="cargo-4.jpg" alt="Cargo 2003 2009">
       </div>
       <div class="tl-body">
         <div class="tl-year">2003 — 2009</div>
@@ -286,7 +256,8 @@
   <div class="props-grid fade">
     <div class="prop-card">
       <div class="prop-img">
-        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <!-- ★ PROPUESTA 01 -->
+        <img src="propuesta-01.jpg" alt="Propuesta 01">
         <div class="prop-img-num">01</div>
       </div>
       <div class="prop-body">
@@ -296,7 +267,8 @@
     </div>
     <div class="prop-card">
       <div class="prop-img">
-        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <!-- ★ PROPUESTA 02 -->
+        <img src="propuesta-02.jpg" alt="Propuesta 02">
         <div class="prop-img-num">02</div>
       </div>
       <div class="prop-body">
@@ -306,7 +278,8 @@
     </div>
     <div class="prop-card">
       <div class="prop-img">
-        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <!-- ★ PROPUESTA 03 -->
+        <img src="propuesta-03.jpg" alt="Propuesta 03">
         <div class="prop-img-num">03</div>
       </div>
       <div class="prop-body">
@@ -316,7 +289,8 @@
     </div>
     <div class="prop-card">
       <div class="prop-img">
-        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <!-- ★ PROPUESTA 04 -->
+        <img src="propuesta-04.jpg" alt="Propuesta 04">
         <div class="prop-img-num">04</div>
       </div>
       <div class="prop-body">
@@ -326,7 +300,8 @@
     </div>
     <div class="prop-card">
       <div class="prop-img">
-        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <!-- ★ PROPUESTA 05 -->
+        <img src="propuesta-05.jpg" alt="Propuesta 05">
         <div class="prop-img-num">05</div>
       </div>
       <div class="prop-body">
@@ -336,7 +311,8 @@
     </div>
     <div class="prop-card">
       <div class="prop-img">
-        <div class="ph" style="height:100%;"><span>480 × 300 px</span></div>
+        <!-- ★ PROPUESTA 06 -->
+        <img src="propuesta-06.jpg" alt="Propuesta 06">
         <div class="prop-img-num">06</div>
       </div>
       <div class="prop-body">
@@ -363,42 +339,45 @@
     </div>
   </div>
 
+  <!-- Vida política -->
   <div class="gal-panel active" id="tab-politica">
     <div class="gal-mosaic">
-      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
-      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi gi-big" onclick="openLb(this)"><div class="ph"><span>600×360px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi gi-tall" onclick="openLb(this)"><img src="galeria-politica-1.jpg" alt="Vida política 1"></div>
+      <div class="gi gi-tall" onclick="openLb(this)"><img src="galeria-politica-2.jpg" alt="Vida política 2"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-politica-3.jpg" alt="Vida política 3"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-politica-4.jpg" alt="Vida política 4"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-politica-5.jpg" alt="Vida política 5"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-politica-6.jpg" alt="Vida política 6"></div>
+      <div class="gi gi-big" onclick="openLb(this)"><img src="galeria-politica-7.jpg" alt="Vida política 7"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-politica-8.jpg" alt="Vida política 8"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-politica-9.jpg" alt="Vida política 9"></div>
     </div>
   </div>
 
+  <!-- Trabajo de campo -->
   <div class="gal-panel" id="tab-campo">
     <div class="gal-mosaic">
-      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi gi-wide" onclick="openLb(this)"><div class="ph"><span>600×180px</span></div></div>
-      <div class="gi gi-big" onclick="openLb(this)"><div class="ph"><span>600×360px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi gi-tall" onclick="openLb(this)"><img src="galeria-campo-1.jpg" alt="Trabajo de campo 1"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-campo-2.jpg" alt="Trabajo de campo 2"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-campo-3.jpg" alt="Trabajo de campo 3"></div>
+      <div class="gi gi-wide" onclick="openLb(this)"><img src="galeria-campo-4.jpg" alt="Trabajo de campo 4"></div>
+      <div class="gi gi-big" onclick="openLb(this)"><img src="galeria-campo-5.jpg" alt="Trabajo de campo 5"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-campo-6.jpg" alt="Trabajo de campo 6"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-campo-7.jpg" alt="Trabajo de campo 7"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-campo-8.jpg" alt="Trabajo de campo 8"></div>
     </div>
   </div>
 
+  <!-- Labor profesional -->
   <div class="gal-panel" id="tab-profesional">
     <div class="gal-mosaic">
-      <div class="gi gi-wide" onclick="openLb(this)"><div class="ph"><span>600×180px</span></div></div>
-      <div class="gi gi-tall" onclick="openLb(this)"><div class="ph"><span>300×360px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi gi-big" onclick="openLb(this)"><div class="ph"><span>600×360px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
-      <div class="gi" onclick="openLb(this)"><div class="ph"><span>300×180px</span></div></div>
+      <div class="gi gi-wide" onclick="openLb(this)"><img src="galeria-profesional-1.jpg" alt="Labor profesional 1"></div>
+      <div class="gi gi-tall" onclick="openLb(this)"><img src="galeria-profesional-2.jpg" alt="Labor profesional 2"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-profesional-3.jpg" alt="Labor profesional 3"></div>
+      <div class="gi gi-big" onclick="openLb(this)"><img src="galeria-profesional-4.jpg" alt="Labor profesional 4"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-profesional-5.jpg" alt="Labor profesional 5"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-profesional-6.jpg" alt="Labor profesional 6"></div>
+      <div class="gi" onclick="openLb(this)"><img src="galeria-profesional-7.jpg" alt="Labor profesional 7"></div>
     </div>
   </div>
 
@@ -427,7 +406,8 @@
   <div class="blog-grid fade">
     <div class="blog-card featured">
       <div class="blog-img">
-        <div class="ph" style="height:100%;"><span>700 × 460 px</span></div>
+        <!-- ★ BLOG: artículo principal (imagen grande) -->
+        <img src="blog-articulo-1.jpg" alt="Artículo principal">
         <div class="blog-cat">Análisis</div>
       </div>
       <div class="blog-body">
@@ -439,7 +419,8 @@
     </div>
     <div class="blog-card">
       <div class="blog-img">
-        <div class="ph" style="height:100%;"><span>400 × 250 px</span></div>
+        <!-- ★ BLOG: artículo 2 -->
+        <img src="blog-articulo-2.jpg" alt="Artículo 2">
         <div class="blog-cat">Opinión</div>
       </div>
       <div class="blog-body">
@@ -451,7 +432,8 @@
     </div>
     <div class="blog-card">
       <div class="blog-img">
-        <div class="ph" style="height:100%;"><span>400 × 250 px</span></div>
+        <!-- ★ BLOG: artículo 3 -->
+        <img src="blog-articulo-3.jpg" alt="Artículo 3">
         <div class="blog-cat">Propuesta</div>
       </div>
       <div class="blog-body">
@@ -479,100 +461,64 @@
 
   <div class="conv-grid fade">
 
-    <!-- Card 1 -->
     <div class="conv-card">
       <div class="conv-img-wrap">
-        <div class="ph conv-ph">
-          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
-            <rect x="8" y="16" width="56" height="40" rx="3" stroke="#bbb" stroke-width="1.5"/>
-            <path d="M8 28h56" stroke="#bbb" stroke-width="1.5"/>
-            <path d="M36 8v8M28 8h16" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <span>480 × 320 px</span>
-        </div>
+        <!-- ★ CONVOCATORIA 1: Educación -->
+        <img src="convocatoria-educacion.jpg" alt="Convocatoria Educación">
         <div class="conv-badge">Abierta</div>
       </div>
       <div class="conv-body">
         <div class="conv-category">Educación</div>
         <h4 class="conv-title">Mesa de Trabajo — Educación Pública</h4>
         <p class="conv-desc">Únete al equipo que diseña propuestas para mejorar la calidad educativa en Lima y regiones.</p>
-        <a href="#" class="conv-btn">
-          <span>Participar</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="#" class="conv-btn"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
-    <!-- Card 2 — Destacada -->
     <div class="conv-card conv-card--featured">
       <div class="conv-img-wrap">
-        <div class="ph conv-ph conv-ph--dark">
-          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
-            <circle cx="36" cy="26" r="14" stroke="#666" stroke-width="1.5"/>
-            <path d="M6 66c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#666" stroke-width="1.5"/>
-          </svg>
-          <span style="color:#555;">480 × 320 px</span>
-        </div>
+        <!-- ★ CONVOCATORIA 2: Ciudadanía (card destacada) -->
+        <img src="convocatoria-ciudadania.jpg" alt="Convocatoria Ciudadanía">
         <div class="conv-badge conv-badge--featured">Destacada</div>
       </div>
       <div class="conv-body">
         <div class="conv-category conv-category--featured">Ciudadanía</div>
         <h4 class="conv-title conv-title--featured">¿Eres parte del cambio?</h4>
         <p class="conv-desc conv-desc--featured">Regístrate como voluntario y lleva el mensaje de transformación a tu distrito. ¡Te necesitamos en cada rincón del Perú!</p>
-        <a href="#" class="conv-btn conv-btn--featured">
-          <span>Participar</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="#" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
-    <!-- Card 3 -->
     <div class="conv-card">
       <div class="conv-img-wrap">
-        <div class="ph conv-ph">
-          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
-            <path d="M36 8L56 18v18c0 14-9.5 26-20 30C25.5 62 16 50 16 36V18L36 8z" stroke="#bbb" stroke-width="1.5"/>
-          </svg>
-          <span>480 × 320 px</span>
-        </div>
+        <!-- ★ CONVOCATORIA 3: Seguridad -->
+        <img src="convocatoria-seguridad.jpg" alt="Convocatoria Seguridad">
         <div class="conv-badge">Abierta</div>
       </div>
       <div class="conv-body">
         <div class="conv-category">Seguridad</div>
         <h4 class="conv-title">Mesa de Seguridad Ciudadana</h4>
         <p class="conv-desc">Trabajemos juntos en propuestas concretas para reducir la inseguridad en nuestras comunidades.</p>
-        <a href="#" class="conv-btn">
-          <span>Participar</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="#" class="conv-btn"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
-    <!-- Card 4 -->
     <div class="conv-card">
       <div class="conv-img-wrap">
-        <div class="ph conv-ph">
-          <svg width="40" height="40" viewBox="0 0 72 72" fill="none">
-            <path d="M12 56V30l24-18 24 18v26H44V40H28v16z" stroke="#bbb" stroke-width="1.5"/>
-          </svg>
-          <span>480 × 320 px</span>
-        </div>
+        <!-- ★ CONVOCATORIA 4: Vivienda -->
+        <img src="convocatoria-vivienda.jpg" alt="Convocatoria Vivienda">
         <div class="conv-badge conv-badge--soon">Próximamente</div>
       </div>
       <div class="conv-body">
         <div class="conv-category">Vivienda</div>
         <h4 class="conv-title">Foro: Vivienda Digna para Todos</h4>
         <p class="conv-desc">Debate abierto sobre políticas de acceso a vivienda. Inscríbete y comparte tu experiencia.</p>
-        <a href="#" class="conv-btn conv-btn--ghost">
-          <span>Inscribirme</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="#" class="conv-btn conv-btn--ghost"><span>Inscribirme</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
-  </div><!-- /.conv-grid -->
+  </div>
 
-  <!-- Banner inferior -->
   <div class="conv-banner fade">
     <div class="conv-banner-text">
       <strong>¿Tienes una propuesta ciudadana?</strong>
@@ -594,22 +540,11 @@
       <div class="tag">Convocatoria</div>
       <h2 class="title">Súmate al <span>movimiento.</span></h2>
       <p class="wa-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>
-
       <div class="wa-steps">
-        <div class="wa-step">
-          <div class="wa-step-num">1</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore.</p>
-        </div>
-        <div class="wa-step">
-          <div class="wa-step-num">2</div>
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="wa-step">
-          <div class="wa-step-num">3</div>
-          <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
-        </div>
+        <div class="wa-step"><div class="wa-step-num">1</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore.</p></div>
+        <div class="wa-step"><div class="wa-step-num">2</div><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+        <div class="wa-step"><div class="wa-step-num">3</div><p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p></div>
       </div>
-
       <a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="wa-btn">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -620,14 +555,8 @@
     </div>
 
     <div class="wa-right fade">
-      <div class="wa-img-ph ph">
-        <svg width="52" height="52" viewBox="0 0 72 72" fill="none">
-          <circle cx="24" cy="28" r="10" stroke="#555" stroke-width="1.5"/>
-          <circle cx="48" cy="28" r="10" stroke="#555" stroke-width="1.5"/>
-          <path d="M4 64c0-11.046 8.954-20 20-20h24c11.046 0 20 8.954 20 20" stroke="#555" stroke-width="1.5"/>
-        </svg>
-        <span>Foto comunidad<br>600 × 500 px</span>
-      </div>
+      <!-- ★ COMUNIDAD: foto grupal o evento -->
+      <img src="footer.png" alt="Comunidad Lucy Gonzalez" class="wa-img-ph">
       <div class="wa-counter">
         <div class="wa-counter-n">+2,400</div>
         <div class="wa-counter-l">personas ya se sumaron</div>
@@ -645,7 +574,7 @@
   <div class="footer-top">
     <div class="fcol">
       <span class="fb-name">Lucy Marleni Gonzales Diaz</span>
-      <span class="fb-sub">Candidata a Diputada · Lima 2026</span>
+      <span class="fb-sub">Candidata al Senado · Lima 2026</span>
       <p class="fb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
       <div class="socials">
         <a href="#" class="soc">f</a>
@@ -712,18 +641,15 @@
     const overlay = document.getElementById('promoOverlay');
     const closeBtn = document.getElementById('promoClose');
     const skipBtn  = document.getElementById('promoSkip');
-
     function closeModal() {
       overlay.classList.add('promo-out');
       setTimeout(() => { overlay.style.display = 'none'; document.body.style.overflow = ''; }, 350);
     }
-
     setTimeout(() => {
       overlay.style.display = 'flex';
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(() => overlay.classList.add('promo-in'));
     }, 400);
-
     closeBtn.addEventListener('click', closeModal);
     skipBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
