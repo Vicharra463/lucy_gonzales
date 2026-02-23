@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convocatorias — Lucy Marleni Gonzales Diaz · Senado 2026</title>
+<link href="style.css" rel="stylesheet">
+<style>
+  /* Hero amarillo */
+  .conv-hero {
+    padding-top: var(--nav-h);
+    background: var(--yellow);
+    border-bottom: 5px solid var(--dark);
+    padding-bottom: 3.5rem;
+  }
+  .conv-hero-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3.5rem 5% 0;
+  }
+  .conv-hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900; color: var(--dark);
+    line-height: .95; letter-spacing: -2px;
+    text-transform: uppercase; margin-bottom: .8rem;
+  }
+  .conv-hero-title em {
+    font-family: var(--font-alt);
+    font-style: italic; font-weight: 700;
+    text-transform: none; font-size: 1.05em;
+  }
+  .conv-hero-desc {
+    font-size: .92rem; font-weight: 300;
+    color: rgba(0,0,0,.6); line-height: 1.75;
+    max-width: 520px;
+  }
+
+  /* Filtros */
+  .conv-filters-wrap {
+    background: var(--white);
+    border-bottom: 3px solid var(--dark);
+    position: sticky; top: var(--nav-h); z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  }
+  .conv-filters {
+    max-width: var(--max-w);
+    margin: 0 auto; padding: 0 5%;
+    display: flex; gap: 0; overflow-x: auto;
+  }
+  .conv-filter-btn {
+    font-family: var(--font-head);
+    font-size: .72rem; font-weight: 700;
+    color: var(--gray); background: none; border: none;
+    padding: .9rem 1.4rem; cursor: pointer;
+    border-bottom: 4px solid transparent; margin-bottom: -3px;
+    transition: color .2s, background .2s, border-color .2s;
+    white-space: nowrap; text-transform: uppercase; letter-spacing: .5px;
+    flex-shrink: 0;
+  }
+  .conv-filter-btn:hover { color: var(--dark); }
+  .conv-filter-btn.active { color: var(--dark); background: var(--yellow); border-bottom-color: var(--dark); }
+
+  /* Contenido */
+  .conv-main {
+    padding: 3.5rem 0 5rem;
+    background: var(--offwhite);
+  }
+  .conv-main-inner {
+    max-width: var(--max-w);
+    margin: 0 auto; padding: 0 5%;
+  }
+
+  /* Separador de sección */
+  .conv-sec-label {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.4rem; margin-top: 2.5rem;
+  }
+  .conv-sec-label:first-child { margin-top: 0; }
+  .conv-sec-label-text {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--dark); white-space: nowrap;
+  }
+  .conv-sec-label-line { flex: 1; height: 2px; background: var(--dark); }
+  .conv-sec-label-count {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 800;
+    color: var(--dark); background: var(--yellow);
+    padding: .1rem .5rem; border: 1.5px solid var(--dark);
+    white-space: nowrap;
+  }
+
+  /* Card grande destacada */
+  .conv-featured {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--dark);
+    border: 2px solid var(--dark);
+    border-top: 5px solid var(--yellow);
+    overflow: hidden; margin-bottom: 1.4rem;
+    transition: box-shadow .2s; cursor: pointer;
+  }
+  .conv-featured:hover { box-shadow: 6px 6px 0 var(--yellow); }
+  .conv-feat-img { overflow: hidden; position: relative; }
+  .conv-feat-img img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    opacity: .75; transition: transform .35s, opacity .3s;
+  }
+  .conv-featured:hover .conv-feat-img img { transform: scale(1.04); opacity: .85; }
+  .conv-feat-badge {
+    position: absolute; top: .8rem; left: .8rem;
+    font-family: var(--font-head);
+    font-size: .55rem; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    background: var(--yellow); color: var(--dark);
+    padding: .15rem .55rem; border: 1.5px solid var(--dark);
+  }
+  .conv-feat-body {
+    padding: 2rem 2.2rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .conv-feat-cat {
+    font-family: var(--font-head);
+    font-size: .57rem; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: .5rem;
+  }
+  .conv-feat-body h2 {
+    font-family: var(--font-head);
+    font-size: 1.1rem; font-weight: 900;
+    color: var(--white); line-height: 1.2;
+    text-transform: uppercase; letter-spacing: .2px; margin-bottom: .7rem;
+  }
+  .conv-feat-body p {
+    font-size: .87rem; color: #aaa;
+    font-weight: 300; line-height: 1.7; margin-bottom: 1.3rem;
+  }
+  .conv-feat-info {
+    display: flex; gap: 1.4rem; flex-wrap: wrap;
+    padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.1);
+  }
+  .conv-info-item {
+    font-family: var(--font-head);
+    font-size: .63rem; font-weight: 600;
+    color: #666; text-transform: uppercase; letter-spacing: .5px;
+    display: flex; align-items: center; gap: .3rem;
+  }
+  .conv-info-dot {
+    width: 8px; height: 8px;
+    background: var(--yellow); border: 1.5px solid rgba(255,255,255,.2);
+    flex-shrink: 0;
+  }
+
+  /* Grid 4 columnas */
+  .conv-grid-4 {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 1.4rem; margin-bottom: 1.4rem;
+  }
+
+  /* Grid 3 columnas */
+  .conv-grid-3 {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1.4rem;
+  }
+
+  /* Card estándar (reutiliza clases del index) */
+  /* solo ajuste de badge cerrado */
+  .conv-badge--closed {
+    background: #ddd; color: #777; border-color: #bbb;
+  }
+
+  @media (max-width:1024px) {
+    .conv-grid-4 { grid-template-columns: repeat(2,1fr); }
+    .conv-grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width:768px) {
+    .conv-featured { grid-template-columns: 1fr; }
+    .conv-feat-img { aspect-ratio: 16/9; }
+    .conv-grid-4 { grid-template-columns: 1fr; }
+    .conv-grid-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="header.png" alt="Lucy Gonzalez" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#inicio">Inicio</a></li>
+    <li><a href="index.html#biografia">Biografía</a></li>
+    <li><a href="index.html#trayectoria">Trayectoria</a></li>
+    <li><a href="index.html#enfoque">Mi Enfoque</a></li>
+    <li><a href="index.html#galeria">Galería</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#convocatorias" style="color:var(--dark);font-weight:800;border-bottom:2px solid var(--yellow)">Convocatorias</a></li>
+    <li><a href="index.html#convocatoria">Únete</a></li>
+  </ul>
+  <a href="index.html#convocatoria" class="nav-cta">Unirse</a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html#inicio" onclick="closeMobile()">Inicio</a>
+  <a href="index.html#biografia" onclick="closeMobile()">Biografía</a>
+  <a href="index.html#trayectoria" onclick="closeMobile()">Trayectoria</a>
+  <a href="index.html#enfoque" onclick="closeMobile()">Mi Enfoque</a>
+  <a href="index.html#galeria" onclick="closeMobile()">Galería</a>
+  <a href="blog.html" onclick="closeMobile()">Blog</a>
+  <a href="convocatorias.html" onclick="closeMobile()">Convocatorias</a>
+  <a href="index.html#convocatoria" onclick="closeMobile()">Únete</a>
+</div>
+
+<!-- HERO -->
+<div class="conv-hero">
+  <div class="conv-hero-inner fade">
+    <div class="tag" style="margin-bottom:1rem">Participa · Propone · Transforma</div>
+    <h1 class="conv-hero-title">Convocatorias<br><em>ciudadanas</em></h1>
+    <p class="conv-hero-desc">Iniciativas y mesas de trabajo donde puedes aportar directamente. La democracia se construye con ciudadanos activos.</p>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div class="conv-filters-wrap">
+  <div class="conv-filters">
+    <button class="conv-filter-btn active" onclick="filterConv(this,'todas')">Todas</button>
+    <button class="conv-filter-btn" onclick="filterConv(this,'educacion')">Educación</button>
+    <button class="conv-filter-btn" onclick="filterConv(this,'ciudadania')">Ciudadanía</button>
+    <button class="conv-filter-btn" onclick="filterConv(this,'seguridad')">Seguridad</button>
+    <button class="conv-filter-btn" onclick="filterConv(this,'salud')">Salud</button>
+    <button class="conv-filter-btn" onclick="filterConv(this,'vivienda')">Vivienda</button>
+    <button class="conv-filter-btn" onclick="filterConv(this,'economia')">Economía</button>
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="conv-main">
+<div class="conv-main-inner">
+
+  <!-- Destacada -->
+  <div class="conv-sec-label fade">
+    <div class="conv-sec-label-text">Convocatoria destacada</div>
+    <div class="conv-sec-label-line"></div>
+    <div class="conv-sec-label-count">Abierta</div>
+  </div>
+
+  <div class="conv-featured fade" data-cat="ciudadania">
+    <div class="conv-feat-img">
+      <img src="convocatoria-ciudadania.jpg" alt="Voluntariado ciudadano">
+      <div class="conv-feat-badge">Destacada · Abierta</div>
+    </div>
+    <div class="conv-feat-body">
+      <div class="conv-feat-cat">Ciudadanía · Voluntariado</div>
+      <h2>Voluntariado ciudadano — Equipo de campo Lucy 2026</h2>
+      <p>Únete como voluntario en tu distrito y lleva el mensaje de transformación a cada familia. Recibirás capacitación, materiales y acompañamiento permanente del equipo.</p>
+      <div class="conv-feat-info">
+        <div class="conv-info-item"><div class="conv-info-dot"></div>Hasta el 15 de marzo</div>
+        <div class="conv-info-item"><div class="conv-info-dot"></div>248 inscritos</div>
+        <div class="conv-info-item"><div class="conv-info-dot"></div>Todos los distritos de Lima</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Abiertas -->
+  <div class="conv-sec-label fade">
+    <div class="conv-sec-label-text">Convocatorias abiertas</div>
+    <div class="conv-sec-label-line"></div>
+    <div class="conv-sec-label-count">6 activas</div>
+  </div>
+
+  <div class="conv-grid-4 fade">
+    <div class="conv-card" data-cat="educacion">
+      <div class="conv-img-wrap">
+        <img src="convocatoria-educacion.jpg" alt="Educación">
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Educación</div>
+        <h4 class="conv-title">Mesa de trabajo — Educación pública de calidad</h4>
+        <p class="conv-desc">Docentes, padres de familia y especialistas diseñan propuestas legislativas para mejorar la educación pública. Sesiones presenciales y virtuales los sábados.</p>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="seguridad">
+      <div class="conv-img-wrap">
+        <img src="convocatoria-seguridad.jpg" alt="Seguridad">
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Seguridad</div>
+        <h4 class="conv-title">Mesa de Seguridad Ciudadana</h4>
+        <p class="conv-desc">Propuestas concretas para reducir la inseguridad en nuestras comunidades. Vecinos, dirigentes y especialistas son bienvenidos.</p>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="salud">
+      <div class="conv-img-wrap">
+        <img src="propuesta-03.jpg" alt="Salud">
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Salud</div>
+        <h4 class="conv-title">Foro de Salud Pública para Todos</h4>
+        <p class="conv-desc">Debate sobre acceso equitativo a salud de calidad. Médicos, enfermeras y ciudadanos aportan desde su experiencia directa.</p>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="economia">
+      <div class="conv-img-wrap">
+        <img src="propuesta-05.jpg" alt="Economía">
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Economía</div>
+        <h4 class="conv-title">Mesa: Economía para la Gente</h4>
+        <p class="conv-desc">Emprendedores, trabajadores informales y economistas construyen una propuesta de política económica inclusiva para el Perú.</p>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="ciudadania">
+      <div class="conv-img-wrap">
+        <img src="galeria-politica-1.jpg" alt="Jóvenes líderes">
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Ciudadanía</div>
+        <h4 class="conv-title">Programa Jóvenes Líderes Lima</h4>
+        <p class="conv-desc">Para jóvenes entre 18 y 30 años que quieren formarse en liderazgo político y gestión pública. Talleres gratuitos, certificación incluida.</p>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="educacion">
+      <div class="conv-img-wrap">
+        <img src="propuesta-01.jpg" alt="Primera infancia">
+        <div class="conv-badge">Abierta</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Educación</div>
+        <h4 class="conv-title">Taller: Primera Infancia y Desarrollo</h4>
+        <p class="conv-desc">Especialistas en niñez y padres de familia construyen una propuesta de política de primera infancia para el Perú.</p>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Próximas -->
+  <div class="conv-sec-label fade">
+    <div class="conv-sec-label-text">Próximamente</div>
+    <div class="conv-sec-label-line"></div>
+    <div class="conv-sec-label-count">3 por abrir</div>
+  </div>
+
+  <div class="conv-grid-3 fade">
+    <div class="conv-card" data-cat="vivienda">
+      <div class="conv-img-wrap">
+        <img src="convocatoria-vivienda.jpg" alt="Vivienda">
+        <div class="conv-badge conv-badge--soon">Próximamente</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Vivienda</div>
+        <h4 class="conv-title">Foro: Vivienda Digna para Todos</h4>
+        <p class="conv-desc">Debate abierto sobre políticas de acceso a vivienda. Apertura: abril 2026. Arquitectos, funcionarios y ciudadanos.</p>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="ciudadania">
+      <div class="conv-img-wrap">
+        <img src="propuesta-02.jpg" alt="Mujer y liderazgo">
+        <div class="conv-badge conv-badge--soon">Próximamente</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Igualdad</div>
+        <h4 class="conv-title">Mesa: Mujer y Liderazgo Político</h4>
+        <p class="conv-desc">Espacio de construcción de propuestas para la igualdad de género en el ámbito político y laboral. Apertura: abril 2026.</p>
+      </div>
+    </div>
+
+    <div class="conv-card" data-cat="economia">
+      <div class="conv-img-wrap">
+        <img src="propuesta-04.jpg" alt="Medio ambiente">
+        <div class="conv-badge conv-badge--soon">Próximamente</div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-category">Medio Ambiente</div>
+        <h4 class="conv-title">Foro: Perú Verde — Política Ambiental</h4>
+        <p class="conv-desc">Políticas ambientales y desarrollo sostenible para el Perú. Con ambientalistas, agricultores y ciudadanos. Apertura: mayo 2026.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+<div class="footer-inner">
+  <div class="footer-top">
+    <div class="fcol">
+      <span class="fb-name">Lucy Marleni Gonzales Diaz</span>
+      <span class="fb-sub">Candidata al Senado · Lima 2026</span>
+      <p class="fb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <div class="socials">
+        <a href="#" class="soc">f</a><a href="#" class="soc">𝕏</a>
+        <a href="#" class="soc">ig</a><a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#biografia">Biografía</a></li>
+        <li><a href="index.html#trayectoria">Trayectoria</a></li>
+        <li><a href="index.html#enfoque">Mi Enfoque</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="convocatorias.html">Convocatorias</a></li>
+        <li><a href="index.html#convocatoria">Únete</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Propuestas</h5>
+      <ul>
+        <li><a href="#">Educación pública</a></li>
+        <li><a href="#">Seguridad ciudadana</a></li>
+        <li><a href="#">Economía inclusiva</a></li>
+        <li><a href="#">Salud para todos</a></li>
+        <li><a href="#">Vivienda digna</a></li>
+        <li><a href="#">Lucha anticorrupción</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="#">Lorem ipsum 441, Lima</a></li>
+        <li><a href="#">(01) 000-0000</a></li>
+        <li><a href="#">contacto@lucy2026.pe</a></li>
+        <li><a href="#">Plan de gobierno (PDF)</a></li>
+        <li><a href="#">Declaración jurada</a></li>
+        <li><a href="#">Prensa y medios</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucy Marleni Gonzales Diaz — Todos los derechos reservados.</p>
+    <p><a href="#">Privacidad</a> · <a href="#">Términos</a></p>
+  </div>
+</div>
+</footer>
+
+<a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="wa-float" aria-label="Únete">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+  <span class="wa-float-tooltip">¡Únete al movimiento!</span>
+</a>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobile() { mobileNav.classList.remove('open'); }
+  document.addEventListener('click', e => {
+    if (!burger.contains(e.target) && !mobileNav.contains(e.target)) closeMobile();
+  });
+  function filterConv(btn, cat) {
+    document.querySelectorAll('.conv-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('[data-cat]').forEach(el => {
+      el.style.display = (cat === 'todas' || el.dataset.cat === cat) ? '' : 'none';
+    });
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

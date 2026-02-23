@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucy Marleni Gonzales Diaz — Candidata al Senado 2026</title>
 <link href="style.css" rel="stylesheet">
+<style>
+  /* ★ solo para alinear el ícono dentro del botón nav-cta */
+  .nav-cta { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; border: none; }
+  .nav-cta svg { width: 15px; height: 15px; flex-shrink: 0; }
+</style>
 </head>
 <body>
 
 <!-- ══ NAV ══════════════════════════════════════════ -->
 <nav>
   <a href="#inicio" class="logo">
-    <!-- ★ LOGO: reemplaza "logo-campana.png" con el nombre real de tu archivo -->
     <img src="header.png" alt="Lucy Gonzalez — Diputada Lima" class="logo-img">
   </a>
 
@@ -22,11 +26,18 @@
     <li><a href="#enfoque">Mi Enfoque</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#blog">Blog</a></li>
-    <li><a href="#convocatorias">Convocatorias</a></li>
+    <li><a href="Convocatorias.html">Convocatorias</a></li>
     <li><a href="#convocatoria">Únete</a></li>
   </ul>
 
-  <a href="#convocatoria" class="nav-cta">Unirse</a>
+  <!-- ★ CAMBIO: <a href="#convocatoria"> → <button onclick="openModal()"> + ícono WhatsApp -->
+  <button class="nav-cta" onclick="openModal()">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+    Unirse
+  </button>
 
   <button class="burger" id="burger" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -50,10 +61,7 @@
   <div class="promo-modal" id="promoModal">
     <button class="promo-close" id="promoClose" aria-label="Cerrar">&#x2715;</button>
     <div class="promo-body">
-
-      <!-- ★ MODAL: imagen promocional con QR -->
       <img src="modal-promo-qr.jpg" alt="Únete al movimiento · Lucy 2026" class="promo-img">
-
       <div class="promo-info">
         <div class="promo-tag">¡Únete ahora!</div>
         <h3 class="promo-title">Súmate al <em>movimiento</em> ciudadano</h3>
@@ -103,7 +111,6 @@
   </div>
 
   <div class="hero-right">
-    <!-- ★ HERO: foto principal de Lucy (vertical) -->
     <img src="modal-principal.jpg" alt="Lucy Marleni Gonzales Diaz">
     <div class="hero-badge">Senado · Lima 2026</div>
   </div>
@@ -116,7 +123,6 @@
   <div class="bio-grid fade">
 
     <div class="bio-img-wrap">
-      <!-- ★ BIOGRAFÍA: retrato oficial de Lucy -->
       <img src="modal-secundario.png" alt="Lucy Gonzalez — Retrato oficial" class="bio-img">
       <div class="bio-accent"></div>
     </div>
@@ -157,30 +163,21 @@
 
   <div class="logros-grid fade">
     <div class="logro-card">
-      <div class="logro-img">
-        <!-- ★ LOGRO 1 -->
-        <img src="logro-1.jpg" alt="Logro 1">
-      </div>
+      <div class="logro-img"><img src="logro-1.jpg" alt="Logro 1"></div>
       <div class="logro-body">
         <h4>Lorem ipsum dolor sit</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
       </div>
     </div>
     <div class="logro-card">
-      <div class="logro-img">
-        <!-- ★ LOGRO 2 -->
-        <img src="logro-2.jpg" alt="Logro 2">
-      </div>
+      <div class="logro-img"><img src="logro-2.jpg" alt="Logro 2"></div>
       <div class="logro-body">
         <h4>Consectetur adipiscing elit</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
       </div>
     </div>
     <div class="logro-card">
-      <div class="logro-img">
-        <!-- ★ LOGRO 3 -->
-        <img src="logro-3.jpg" alt="Logro 3">
-      </div>
+      <div class="logro-img"><img src="logro-3.jpg" alt="Logro 3"></div>
       <div class="logro-body">
         <h4>Eiusmod tempor incididunt</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.</p>
@@ -190,10 +187,7 @@
 
   <div class="tl-wrap fade">
     <div class="tl-card">
-      <div class="tl-img">
-        <!-- ★ CARGO 1 (2022–actualidad) -->
-        <img src="cargo-1.jpg" alt="Cargo 2022 actualidad">
-      </div>
+      <div class="tl-img"><img src="cargo-1.jpg" alt="Cargo 2022 actualidad"></div>
       <div class="tl-body">
         <div class="tl-year">2022 — actualidad</div>
         <h4>Lorem Ipsum Dolor Sit Amet</h4>
@@ -202,10 +196,7 @@
       </div>
     </div>
     <div class="tl-card">
-      <div class="tl-img">
-        <!-- ★ CARGO 2 (2018–2022) -->
-        <img src="cargo-2.jpg" alt="Cargo 2018 2022">
-      </div>
+      <div class="tl-img"><img src="cargo-2.jpg" alt="Cargo 2018 2022"></div>
       <div class="tl-body">
         <div class="tl-year">2018 — 2022</div>
         <h4>Consectetur Adipiscing Elit</h4>
@@ -214,10 +205,7 @@
       </div>
     </div>
     <div class="tl-card">
-      <div class="tl-img">
-        <!-- ★ CARGO 3 (2014–2018) -->
-        <img src="cargo-3.jpg" alt="Cargo 2014 2018">
-      </div>
+      <div class="tl-img"><img src="cargo-3.jpg" alt="Cargo 2014 2018"></div>
       <div class="tl-body">
         <div class="tl-year">2014 — 2018</div>
         <h4>Sed Do Eiusmod Tempor</h4>
@@ -226,10 +214,7 @@
       </div>
     </div>
     <div class="tl-card">
-      <div class="tl-img">
-        <!-- ★ CARGO 4 (2003–2009) -->
-        <img src="cargo-4.jpg" alt="Cargo 2003 2009">
-      </div>
+      <div class="tl-img"><img src="cargo-4.jpg" alt="Cargo 2003 2009"></div>
       <div class="tl-body">
         <div class="tl-year">2003 — 2009</div>
         <h4>Ut Labore Et Dolore Magna</h4>
@@ -255,70 +240,28 @@
 
   <div class="props-grid fade">
     <div class="prop-card">
-      <div class="prop-img">
-        <!-- ★ PROPUESTA 01 -->
-        <img src="propuesta-01.jpg" alt="Propuesta 01">
-        <div class="prop-img-num">01</div>
-      </div>
-      <div class="prop-body">
-        <h4>Lorem ipsum dolor sit amet</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      </div>
+      <div class="prop-img"><img src="propuesta-01.jpg" alt="Propuesta 01"><div class="prop-img-num">01</div></div>
+      <div class="prop-body"><h4>Lorem ipsum dolor sit amet</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p></div>
     </div>
     <div class="prop-card">
-      <div class="prop-img">
-        <!-- ★ PROPUESTA 02 -->
-        <img src="propuesta-02.jpg" alt="Propuesta 02">
-        <div class="prop-img-num">02</div>
-      </div>
-      <div class="prop-body">
-        <h4>Consectetur adipiscing elit</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud exercitation.</p>
-      </div>
+      <div class="prop-img"><img src="propuesta-02.jpg" alt="Propuesta 02"><div class="prop-img-num">02</div></div>
+      <div class="prop-body"><h4>Consectetur adipiscing elit</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud exercitation.</p></div>
     </div>
     <div class="prop-card">
-      <div class="prop-img">
-        <!-- ★ PROPUESTA 03 -->
-        <img src="propuesta-03.jpg" alt="Propuesta 03">
-        <div class="prop-img-num">03</div>
-      </div>
-      <div class="prop-body">
-        <h4>Sed do eiusmod tempor</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.</p>
-      </div>
+      <div class="prop-img"><img src="propuesta-03.jpg" alt="Propuesta 03"><div class="prop-img-num">03</div></div>
+      <div class="prop-body"><h4>Sed do eiusmod tempor</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.</p></div>
     </div>
     <div class="prop-card">
-      <div class="prop-img">
-        <!-- ★ PROPUESTA 04 -->
-        <img src="propuesta-04.jpg" alt="Propuesta 04">
-        <div class="prop-img-num">04</div>
-      </div>
-      <div class="prop-body">
-        <h4>Ut labore et dolore magna</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.</p>
-      </div>
+      <div class="prop-img"><img src="propuesta-04.jpg" alt="Propuesta 04"><div class="prop-img-num">04</div></div>
+      <div class="prop-body"><h4>Ut labore et dolore magna</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.</p></div>
     </div>
     <div class="prop-card">
-      <div class="prop-img">
-        <!-- ★ PROPUESTA 05 -->
-        <img src="propuesta-05.jpg" alt="Propuesta 05">
-        <div class="prop-img-num">05</div>
-      </div>
-      <div class="prop-body">
-        <h4>Quis nostrud exercitation</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-      </div>
+      <div class="prop-img"><img src="propuesta-05.jpg" alt="Propuesta 05"><div class="prop-img-num">05</div></div>
+      <div class="prop-body"><h4>Quis nostrud exercitation</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p></div>
     </div>
     <div class="prop-card">
-      <div class="prop-img">
-        <!-- ★ PROPUESTA 06 -->
-        <img src="propuesta-06.jpg" alt="Propuesta 06">
-        <div class="prop-img-num">06</div>
-      </div>
-      <div class="prop-body">
-        <h4>Ullamco laboris nisi aliquip</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut perspiciatis unde omnis iste natus error sit.</p>
-      </div>
+      <div class="prop-img"><img src="propuesta-06.jpg" alt="Propuesta 06"><div class="prop-img-num">06</div></div>
+      <div class="prop-body"><h4>Ullamco laboris nisi aliquip</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut perspiciatis unde omnis iste natus error sit.</p></div>
     </div>
   </div>
 
@@ -339,7 +282,6 @@
     </div>
   </div>
 
-  <!-- Vida política -->
   <div class="gal-panel active" id="tab-politica">
     <div class="gal-mosaic">
       <div class="gi gi-tall" onclick="openLb(this)"><img src="galeria-politica-1.jpg" alt="Vida política 1"></div>
@@ -354,7 +296,6 @@
     </div>
   </div>
 
-  <!-- Trabajo de campo -->
   <div class="gal-panel" id="tab-campo">
     <div class="gal-mosaic">
       <div class="gi gi-tall" onclick="openLb(this)"><img src="galeria-campo-1.jpg" alt="Trabajo de campo 1"></div>
@@ -368,7 +309,6 @@
     </div>
   </div>
 
-  <!-- Labor profesional -->
   <div class="gal-panel" id="tab-profesional">
     <div class="gal-mosaic">
       <div class="gi gi-wide" onclick="openLb(this)"><img src="galeria-profesional-1.jpg" alt="Labor profesional 1"></div>
@@ -384,7 +324,6 @@
 </div>
 </div>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLb(event)">
   <button class="lb-close">&#x2715;</button>
   <img class="lb-img" id="lb-img" src="" alt="">
@@ -400,13 +339,12 @@
       <div class="tag">Blog</div>
       <h2 class="title">Ideas, análisis y <span>posición.</span></h2>
     </div>
-    <a href="#" class="btn btn-outline">Ver todos</a>
+    <a href="blog.html" class="btn btn-outline">Ver todos</a>
   </div>
 
   <div class="blog-grid fade">
     <div class="blog-card featured">
       <div class="blog-img">
-        <!-- ★ BLOG: artículo principal (imagen grande) -->
         <img src="blog-articulo-1.jpg" alt="Artículo principal">
         <div class="blog-cat">Análisis</div>
       </div>
@@ -414,12 +352,11 @@
         <div class="blog-meta">15 de febrero, 2026 · 8 min de lectura</div>
         <h4>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation.</p>
-        <a href="#" class="link-more">Leer artículo →</a>
+        <a href="./blog/blog_detalle.html" class="link-more">Leer artículo →</a>
       </div>
     </div>
     <div class="blog-card">
       <div class="blog-img">
-        <!-- ★ BLOG: artículo 2 -->
         <img src="blog-articulo-2.jpg" alt="Artículo 2">
         <div class="blog-cat">Opinión</div>
       </div>
@@ -427,12 +364,11 @@
         <div class="blog-meta">10 de febrero, 2026 · 5 min</div>
         <h4>Lorem ipsum dolor sit amet consectetur adipiscing</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-        <a href="#" class="link-more">Leer →</a>
+        <a href="./blog/blog_detalle.html" class="link-more">Leer →</a>
       </div>
     </div>
     <div class="blog-card">
       <div class="blog-img">
-        <!-- ★ BLOG: artículo 3 -->
         <img src="blog-articulo-3.jpg" alt="Artículo 3">
         <div class="blog-cat">Propuesta</div>
       </div>
@@ -440,7 +376,7 @@
         <div class="blog-meta">5 de febrero, 2026 · 6 min</div>
         <h4>Ut labore et dolore magna aliqua enim veniam</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis nostrud exercitation ullamco laboris.</p>
-        <a href="#" class="link-more">Leer →</a>
+        <a href="./blog/blog_detalle.html" class="link-more">Leer →</a>
       </div>
     </div>
   </div>
@@ -460,10 +396,8 @@
   </div>
 
   <div class="conv-grid fade">
-
     <div class="conv-card">
       <div class="conv-img-wrap">
-        <!-- ★ CONVOCATORIA 1: Educación -->
         <img src="convocatoria-educacion.jpg" alt="Convocatoria Educación">
         <div class="conv-badge">Abierta</div>
       </div>
@@ -471,13 +405,12 @@
         <div class="conv-category">Educación</div>
         <h4 class="conv-title">Mesa de Trabajo — Educación Pública</h4>
         <p class="conv-desc">Únete al equipo que diseña propuestas para mejorar la calidad educativa en Lima y regiones.</p>
-        <a href="#" class="conv-btn"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
     <div class="conv-card conv-card--featured">
       <div class="conv-img-wrap">
-        <!-- ★ CONVOCATORIA 2: Ciudadanía (card destacada) -->
         <img src="convocatoria-ciudadania.jpg" alt="Convocatoria Ciudadanía">
         <div class="conv-badge conv-badge--featured">Destacada</div>
       </div>
@@ -485,13 +418,12 @@
         <div class="conv-category conv-category--featured">Ciudadanía</div>
         <h4 class="conv-title conv-title--featured">¿Eres parte del cambio?</h4>
         <p class="conv-desc conv-desc--featured">Regístrate como voluntario y lleva el mensaje de transformación a tu distrito. ¡Te necesitamos en cada rincón del Perú!</p>
-        <a href="#" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--featured"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
     <div class="conv-card">
       <div class="conv-img-wrap">
-        <!-- ★ CONVOCATORIA 3: Seguridad -->
         <img src="convocatoria-seguridad.jpg" alt="Convocatoria Seguridad">
         <div class="conv-badge">Abierta</div>
       </div>
@@ -499,13 +431,12 @@
         <div class="conv-category">Seguridad</div>
         <h4 class="conv-title">Mesa de Seguridad Ciudadana</h4>
         <p class="conv-desc">Trabajemos juntos en propuestas concretas para reducir la inseguridad en nuestras comunidades.</p>
-        <a href="#" class="conv-btn"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn"><span>Participar</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
 
     <div class="conv-card">
       <div class="conv-img-wrap">
-        <!-- ★ CONVOCATORIA 4: Vivienda -->
         <img src="convocatoria-vivienda.jpg" alt="Convocatoria Vivienda">
         <div class="conv-badge conv-badge--soon">Próximamente</div>
       </div>
@@ -513,10 +444,9 @@
         <div class="conv-category">Vivienda</div>
         <h4 class="conv-title">Foro: Vivienda Digna para Todos</h4>
         <p class="conv-desc">Debate abierto sobre políticas de acceso a vivienda. Inscríbete y comparte tu experiencia.</p>
-        <a href="#" class="conv-btn conv-btn--ghost"><span>Inscribirme</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="./convocatoria/convocatoria_detalle.html" class="conv-btn conv-btn--ghost"><span>Inscribirme</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
-
   </div>
 
   <div class="conv-banner fade">
@@ -555,7 +485,6 @@
     </div>
 
     <div class="wa-right fade">
-      <!-- ★ COMUNIDAD: foto grupal o evento -->
       <img src="footer.png" alt="Comunidad Lucy Gonzalez" class="wa-img-ph">
       <div class="wa-counter">
         <div class="wa-counter-n">+2,400</div>
@@ -637,31 +566,42 @@
 </a>
 
 <script>
-  (function() {
-    const overlay = document.getElementById('promoOverlay');
-    const closeBtn = document.getElementById('promoClose');
-    const skipBtn  = document.getElementById('promoSkip');
-    function closeModal() {
-      overlay.classList.add('promo-out');
-      setTimeout(() => { overlay.style.display = 'none'; document.body.style.overflow = ''; }, 350);
-    }
-    setTimeout(() => {
-      overlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => overlay.classList.add('promo-in'));
-    }, 400);
-    closeBtn.addEventListener('click', closeModal);
-    skipBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  })();
+  /* ── MODAL ─────────────────────────────────────────── */
+  const overlay  = document.getElementById('promoOverlay');
+  const closeBtn = document.getElementById('promoClose');
+  const skipBtn  = document.getElementById('promoSkip');
 
+  function openModal() {
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => overlay.classList.add('promo-in'));
+  }
+  function closeModal() {
+    overlay.classList.remove('promo-in');
+    overlay.classList.add('promo-out');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      overlay.classList.remove('promo-out');
+      document.body.style.overflow = '';
+    }, 350);
+  }
+
+  /* Se abre automáticamente al cargar */
+  setTimeout(openModal, 400);
+
+  closeBtn.addEventListener('click', closeModal);
+  skipBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ── SCROLL FADE ───────────────────────────────────── */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-  const burger = document.getElementById('burger');
+  /* ── BURGER ────────────────────────────────────────── */
+  const burger    = document.getElementById('burger');
   const mobileNav = document.getElementById('mobile-nav');
   burger.addEventListener('click', () => mobileNav.classList.toggle('open'));
   function closeMobile() { mobileNav.classList.remove('open'); }
@@ -669,6 +609,7 @@
     if (!burger.contains(e.target) && !mobileNav.contains(e.target)) closeMobile();
   });
 
+  /* ── GALERÍA TABS ──────────────────────────────────── */
   document.querySelectorAll('.gal-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.gal-tab').forEach(t => t.classList.remove('active'));
@@ -678,6 +619,7 @@
     });
   });
 
+  /* ── LIGHTBOX ──────────────────────────────────────── */
   function openLb(el) {
     const img = el.querySelector('img');
     if (!img) return;

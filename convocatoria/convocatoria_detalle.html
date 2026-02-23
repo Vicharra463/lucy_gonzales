@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesa de Educación Pública — Convocatorias Lucy Gonzalez</title>
+<link href="../style.css" rel="stylesheet">
+<style>
+  /* ══ HERO ════════════════════════════════════════════ */
+  .conv-det-hero {
+    padding-top: var(--nav-h);
+    background: var(--yellow);
+    border-bottom: 5px solid var(--dark);
+  }
+  .conv-det-hero-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3.5rem 5%;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+    align-items: center;
+  }
+  .conv-det-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-family: var(--font-head);
+    font-size: .58rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--dark); background: var(--dark);
+    color: var(--yellow);
+    padding: .22rem .75rem; margin-bottom: 1rem;
+    border: 2px solid var(--dark);
+  }
+  .conv-det-badge--open { background: var(--dark); color: var(--yellow); }
+  .conv-det-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+    font-weight: 900; color: var(--dark);
+    line-height: 1.0; letter-spacing: -1.5px;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .conv-det-title em {
+    font-family: var(--font-alt);
+    font-style: italic; font-weight: 700;
+    text-transform: none; font-size: 1.05em;
+  }
+  .conv-det-desc {
+    font-size: .92rem; font-weight: 300;
+    color: rgba(0,0,0,.65); line-height: 1.75;
+    margin-bottom: 1.5rem; max-width: 480px;
+  }
+  /* Info pills */
+  .conv-det-pills {
+    display: flex; flex-wrap: wrap; gap: .5rem;
+  }
+  .conv-det-pill {
+    display: flex; align-items: center; gap: .4rem;
+    font-family: var(--font-head);
+    font-size: .62rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .5px;
+    color: var(--dark);
+    background: rgba(0,0,0,.08);
+    border: 1.5px solid rgba(0,0,0,.2);
+    padding: .3rem .75rem;
+  }
+  /* Imagen hero */
+  .conv-det-hero-img {
+    width: 100%; aspect-ratio: 4/3;
+    overflow: hidden;
+    border: 3px solid var(--dark);
+    position: relative;
+  }
+  .conv-det-hero-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    max-width: var(--max-w); margin: 0 auto; padding: 1rem 5%;
+    display: flex; align-items: center; gap: .5rem;
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: #555; border-bottom: 1px solid var(--gray-lt);
+    background: var(--white);
+  }
+  .breadcrumb a { color: #555; text-decoration: none; transition: color .2s; }
+  .breadcrumb a:hover { color: var(--dark); }
+  .breadcrumb span { font-size: .5rem; color: #bbb; }
+
+  /* ══ CONTENIDO ═══════════════════════════════════════ */
+  .conv-det-page {
+    background: var(--white);
+    padding: 4rem 0 5rem;
+  }
+  .conv-det-inner {
+    max-width: var(--max-w);
+    margin: 0 auto; padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  /* Cuerpo */
+  .conv-det-body {}
+
+  .conv-det-body h2 {
+    font-family: var(--font-head);
+    font-size: 1rem; font-weight: 900;
+    color: var(--dark); text-transform: uppercase;
+    letter-spacing: -.2px; line-height: 1.2;
+    margin: 2rem 0 .8rem;
+    padding-bottom: .45rem;
+    border-bottom: 3px solid var(--yellow);
+    display: inline-block;
+  }
+  .conv-det-body h2:first-child { margin-top: 0; }
+
+  .conv-det-body p {
+    font-family: var(--font-body);
+    font-size: .93rem; font-weight: 300;
+    color: var(--mid); line-height: 1.9;
+    margin-bottom: 1.1rem;
+  }
+  .conv-det-body p strong { color: var(--dark); font-weight: 700; }
+
+  .conv-det-body ul {
+    margin: .5rem 0 1.5rem; padding: 0; list-style: none;
+  }
+  .conv-det-body ul li {
+    font-family: var(--font-body);
+    font-size: .91rem; font-weight: 300;
+    color: var(--mid); line-height: 1.7;
+    padding: .5rem 0 .5rem 1.3rem;
+    border-bottom: 1px solid var(--gray-lt);
+    position: relative;
+  }
+  .conv-det-body ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 8px; height: 8px;
+    background: var(--yellow); border: 1.5px solid var(--dark);
+  }
+
+  /* Imagen dentro */
+  .conv-img-block {
+    margin: 2rem 0;
+    border: 2px solid var(--dark); overflow: hidden;
+  }
+  .conv-img-block img {
+    width: 100%; display: block;
+    aspect-ratio: 16/9; object-fit: cover;
+  }
+  .conv-img-caption {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 500;
+    color: #888; text-transform: uppercase;
+    letter-spacing: 1px; padding: .5rem .8rem;
+    border-top: 1px solid var(--gray-lt);
+    background: var(--offwhite);
+  }
+
+  /* Bloque de cronograma */
+  .conv-cronograma {
+    background: var(--offwhite);
+    border: 2px solid var(--dark);
+    border-left: 5px solid var(--yellow);
+    margin: 2rem 0; overflow: hidden;
+  }
+  .conv-cronograma-head {
+    background: var(--dark);
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--yellow); padding: .7rem 1.2rem;
+  }
+  .conv-cronograma-body { padding: 0; }
+  .conv-crono-row {
+    display: grid; grid-template-columns: 160px 1fr;
+    border-bottom: 1px solid var(--gray-lt);
+  }
+  .conv-crono-row:last-child { border-bottom: none; }
+  .conv-crono-fecha {
+    background: var(--yellow);
+    padding: .8rem 1rem;
+    font-family: var(--font-head);
+    font-size: .68rem; font-weight: 800;
+    color: var(--dark); text-transform: uppercase;
+    letter-spacing: .5px; line-height: 1.3;
+    border-right: 2px solid var(--dark);
+    display: flex; align-items: center;
+  }
+  .conv-crono-desc {
+    padding: .8rem 1.1rem;
+    font-family: var(--font-body);
+    font-size: .85rem; font-weight: 300;
+    color: var(--mid); line-height: 1.55;
+    display: flex; align-items: center;
+  }
+
+  /* Quiénes pueden participar */
+  .conv-perfiles {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: .8rem; margin: 1rem 0 1.5rem;
+  }
+  .conv-perfil {
+    background: var(--offwhite);
+    border: 2px solid var(--dark);
+    border-top: 4px solid var(--yellow);
+    padding: .9rem 1rem;
+    font-family: var(--font-head);
+    font-size: .75rem; font-weight: 700;
+    color: var(--dark); text-transform: uppercase;
+    letter-spacing: .3px;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .conv-perfil::before {
+    content: '✓';
+    width: 20px; height: 20px;
+    background: var(--yellow); color: var(--dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .7rem; font-weight: 900;
+    border: 1.5px solid var(--dark); flex-shrink: 0;
+  }
+
+  /* Volver */
+  .conv-det-back {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-family: var(--font-head);
+    font-size: .7rem; font-weight: 700;
+    color: var(--mid); text-decoration: none;
+    text-transform: uppercase; letter-spacing: .5px;
+    transition: color .2s; margin-top: 2rem;
+  }
+  .conv-det-back:hover { color: var(--dark); }
+
+  /* ══ SIDEBAR ══════════════════════════════════════════ */
+  .conv-det-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .side-box {
+    background: var(--white);
+    border: 2px solid var(--dark);
+    border-top: 4px solid var(--yellow);
+    overflow: hidden;
+  }
+  .side-box-head {
+    padding: .7rem 1rem;
+    background: var(--dark);
+    font-family: var(--font-head);
+    font-size: .58rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--yellow);
+  }
+  .side-box-body { padding: 1rem; }
+
+  /* Ficha técnica */
+  .ficha-list { display: flex; flex-direction: column; gap: 0; }
+  .ficha-row {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; gap: .5rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--gray-lt);
+  }
+  .ficha-row:last-child { border-bottom: none; }
+  .ficha-key {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--gray); flex-shrink: 0;
+  }
+  .ficha-val {
+    font-family: var(--font-head);
+    font-size: .72rem; font-weight: 700;
+    color: var(--dark); text-align: right;
+  }
+  .ficha-val.open {
+    color: var(--dark);
+    background: var(--yellow);
+    padding: .05rem .4rem;
+    border: 1.5px solid var(--dark);
+  }
+
+  /* Otras convocatorias */
+  .other-list { display: flex; flex-direction: column; gap: .7rem; }
+  .other-item {
+    display: grid; grid-template-columns: 60px 1fr;
+    gap: .6rem; cursor: pointer;
+    padding-bottom: .7rem;
+    border-bottom: 1px solid var(--gray-lt);
+    transition: opacity .2s;
+  }
+  .other-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .other-item:hover { opacity: .75; }
+  .other-img {
+    width: 60px; height: 46px;
+    overflow: hidden; border: 1.5px solid var(--dark);
+  }
+  .other-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .other-title {
+    font-family: var(--font-head);
+    font-size: .7rem; font-weight: 700;
+    color: var(--dark); line-height: 1.25;
+    text-transform: uppercase;
+  }
+  .other-cat {
+    font-family: var(--font-head);
+    font-size: .57rem; color: var(--gray);
+    font-weight: 600; text-transform: uppercase;
+    letter-spacing: .5px; margin-top: .15rem;
+  }
+
+  @media (max-width:1024px) {
+    .conv-det-hero-inner { grid-template-columns: 1fr; }
+    .conv-det-hero-img { display: none; }
+    .conv-det-inner { grid-template-columns: 1fr; }
+    .conv-det-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width:768px) {
+    .conv-perfiles { grid-template-columns: 1fr; }
+    .conv-det-sidebar { grid-template-columns: 1fr; }
+    .conv-crono-row { grid-template-columns: 1fr; }
+    .conv-crono-fecha { border-right: none; border-bottom: 1px solid var(--dark); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="../header.png" alt="Lucy Gonzalez" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="../index.html#biografia">Biografía</a></li>
+    <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+    <li><a href="../index.html#enfoque">Mi Enfoque</a></li>
+    <li><a href="../index.html#galeria">Galería</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../convocatorias.html" style="color:var(--dark);font-weight:800;border-bottom:2px solid var(--yellow)">Convocatorias</a></li>
+    <li><a href="index.html#convocatoria">Únete</a></li>
+  </ul>
+  <a href="index.html#convocatoria" class="nav-cta">Unirse</a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html#inicio" onclick="closeMobile()">Inicio</a>
+  <a href="index.html#biografia" onclick="closeMobile()">Biografía</a>
+  <a href="index.html#trayectoria" onclick="closeMobile()">Trayectoria</a>
+  <a href="index.html#enfoque" onclick="closeMobile()">Mi Enfoque</a>
+  <a href="index.html#galeria" onclick="closeMobile()">Galería</a>
+  <a href="blog.html" onclick="closeMobile()">Blog</a>
+  <a href="convocatorias.html" onclick="closeMobile()">Convocatorias</a>
+  <a href="index.html#convocatoria" onclick="closeMobile()">Únete</a>
+</div>
+
+<!-- HERO -->
+<div class="conv-det-hero">
+  <div class="conv-det-hero-inner fade">
+    <div>
+      <div class="conv-det-badge conv-det-badge--open">● Convocatoria abierta</div>
+      <h1 class="conv-det-title">Mesa de trabajo —<br><em>Educación pública</em><br>de calidad</h1>
+      <p class="conv-det-desc">Docentes, padres de familia y especialistas diseñan propuestas legislativas concretas para mejorar la educación pública en Lima y regiones. Sesiones presenciales y virtuales.</p>
+      <div class="conv-det-pills">
+        <div class="conv-det-pill">📅 Sábados 9:00 am</div>
+        <div class="conv-det-pill">📍 Lima / Virtual</div>
+        <div class="conv-det-pill">👥 Educación</div>
+        <div class="conv-det-pill">⏱ Hasta el 15 de marzo</div>
+      </div>
+    </div>
+    <div class="conv-det-hero-img">
+      <img src="convocatoria-educacion.jpg" alt="Mesa de trabajo educación">
+    </div>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Inicio</a>
+  <span>›</span>
+  <a href="convocatorias.html">Convocatorias</a>
+  <span>›</span>
+  <span style="color:var(--dark)">Mesa de Educación Pública</span>
+</div>
+
+<!-- CONTENIDO -->
+<div class="conv-det-page">
+<div class="conv-det-inner">
+
+  <div class="conv-det-body fade">
+
+    <h2>¿De qué se trata?</h2>
+    <p>La Mesa de Trabajo de Educación Pública es un espacio de participación ciudadana organizado por el equipo de Lucy Gonzalez para construir colectivamente propuestas legislativas que mejoren la calidad de la educación en el Perú. No es una reunión política ordinaria: es un espacio técnico donde <strong>la experiencia directa de docentes, padres de familia y especialistas se convierte en política pública concreta.</strong></p>
+    <p>Cada sesión tiene una agenda temática definida, un facilitador y un documento de trabajo que se comparte con antelación. Los acuerdos de cada reunión se integran al plan de gobierno.</p>
+
+    <div class="conv-img-block">
+      <img src="logro-1.jpg" alt="Sesión de trabajo educación">
+      <div class="conv-img-caption">Primera sesión de la Mesa de Educación · Lima, enero 2026</div>
+    </div>
+
+    <h2>¿Quiénes pueden participar?</h2>
+    <p>Esta convocatoria está abierta para cualquier persona que quiera aportar desde su experiencia. No se requiere afiliación política ni conocimientos especializados. Se valora especialmente la experiencia directa con el sistema educativo peruano.</p>
+
+    <div class="conv-perfiles">
+      <div class="conv-perfil">Docentes de colegios públicos</div>
+      <div class="conv-perfil">Padres y madres de familia</div>
+      <div class="conv-perfil">Especialistas en educación</div>
+      <div class="conv-perfil">Estudiantes universitarios</div>
+      <div class="conv-perfil">Directores de colegios</div>
+      <div class="conv-perfil">Ciudadanos comprometidos</div>
+    </div>
+
+    <h2>Temas que abordaremos</h2>
+    <ul>
+      <li><strong>Brecha digital en colegios públicos:</strong> acceso a internet y dispositivos en zonas rurales y periurbanas de Lima.</li>
+      <li><strong>Formación y remuneración docente:</strong> propuestas para dignificar la carrera magisterial y mejorar la formación continua.</li>
+      <li><strong>Primera infancia:</strong> políticas de atención temprana y educación inicial para niños de 0 a 5 años.</li>
+      <li><strong>Infraestructura escolar:</strong> diagnóstico y plan de acción para los colegios en estado crítico en Lima.</li>
+      <li><strong>Educación intercultural bilingüe:</strong> reconocimiento y fortalecimiento de la diversidad cultural en el sistema educativo.</li>
+    </ul>
+
+    <h2>Cronograma de sesiones</h2>
+
+    <div class="conv-cronograma">
+      <div class="conv-cronograma-head">Calendario 2026</div>
+      <div class="conv-cronograma-body">
+        <div class="conv-crono-row">
+          <div class="conv-crono-fecha">Sáb 1 de marzo<br>9:00 am</div>
+          <div class="conv-crono-desc">Sesión inaugural — Diagnóstico de la educación pública en Lima. Presentación de participantes y metodología de trabajo.</div>
+        </div>
+        <div class="conv-crono-row">
+          <div class="conv-crono-fecha">Sáb 8 de marzo<br>9:00 am</div>
+          <div class="conv-crono-desc">Brecha digital y acceso tecnológico. Presentación de datos por distrito y trabajo en grupos.</div>
+        </div>
+        <div class="conv-crono-row">
+          <div class="conv-crono-fecha">Sáb 15 de marzo<br>9:00 am</div>
+          <div class="conv-crono-desc">Formación docente — mesa técnica con representantes del MINEDU y asociaciones de maestros.</div>
+        </div>
+        <div class="conv-crono-row">
+          <div class="conv-crono-fecha">Sáb 22 de marzo<br>9:00 am</div>
+          <div class="conv-crono-desc">Primera infancia y educación inicial. Presentación de propuesta preliminar para debate.</div>
+        </div>
+        <div class="conv-crono-row">
+          <div class="conv-crono-fecha">Sáb 29 de marzo<br>9:00 am</div>
+          <div class="conv-crono-desc">Sesión de cierre — Documento final de propuestas y presentación pública del resultado.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Modalidad y lugar</h2>
+    <p>Las sesiones se realizan en modalidad <strong>híbrida: presencial en Lima y virtual por Zoom</strong> de manera simultánea. El enlace de Zoom y la dirección exacta del local se envían por WhatsApp a los participantes inscritos 48 horas antes de cada sesión.</p>
+    <p>La participación es completamente gratuita. Se emite certificado de participación al completar al menos tres de las cinco sesiones.</p>
+
+    <a href="../Convocatorias.html" class="conv-det-back">← Volver a convocatorias</a>
+
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="conv-det-sidebar">
+
+    <div class="side-box">
+      <div class="side-box-head">Ficha de la convocatoria</div>
+      <div class="side-box-body">
+        <div class="ficha-list">
+          <div class="ficha-row">
+            <div class="ficha-key">Estado</div>
+            <div class="ficha-val open">Abierta</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Temática</div>
+            <div class="ficha-val">Educación</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Modalidad</div>
+            <div class="ficha-val">Híbrida</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Frecuencia</div>
+            <div class="ficha-val">Sábados 9am</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Duración</div>
+            <div class="ficha-val">5 sesiones</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Cierre</div>
+            <div class="ficha-val">15 de marzo</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Inscritos</div>
+            <div class="ficha-val">87 participantes</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Costo</div>
+            <div class="ficha-val">Gratuito</div>
+          </div>
+          <div class="ficha-row">
+            <div class="ficha-key">Certificado</div>
+            <div class="ficha-val">Sí, al completar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-box">
+      <div class="side-box-head">Otras convocatorias</div>
+      <div class="side-box-body">
+        <div class="other-list">
+          <div class="other-item" onclick="location.href='#'">
+            <div class="other-img"><img src="convocatoria-ciudadania.jpg" alt="Voluntariado"></div>
+            <div>
+              <div class="other-title">Voluntariado ciudadano 2026</div>
+              <div class="other-cat">Ciudadanía · Abierta</div>
+            </div>
+          </div>
+          <div class="other-item" onclick="location.href='#'">
+            <div class="other-img"><img src="convocatoria-seguridad.jpg" alt="Seguridad"></div>
+            <div>
+              <div class="other-title">Mesa de Seguridad Ciudadana</div>
+              <div class="other-cat">Seguridad · Abierta</div>
+            </div>
+          </div>
+          <div class="other-item" onclick="location.href='#'">
+            <div class="other-img"><img src="propuesta-03.jpg" alt="Salud"></div>
+            <div>
+              <div class="other-title">Foro de Salud Pública</div>
+              <div class="other-cat">Salud · Abierta</div>
+            </div>
+          </div>
+          <div class="other-item" onclick="location.href='#'">
+            <div class="other-img"><img src="convocatoria-vivienda.jpg" alt="Vivienda"></div>
+            <div>
+              <div class="other-title">Foro: Vivienda Digna</div>
+              <div class="other-cat">Vivienda · Próximamente</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+</div>
+
+<footer>
+<div class="footer-inner">
+  <div class="footer-top">
+    <div class="fcol">
+      <span class="fb-name">Lucy Marleni Gonzales Diaz</span>
+      <span class="fb-sub">Candidata al Senado · Lima 2026</span>
+      <p class="fb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <div class="socials">
+        <a href="#" class="soc">f</a><a href="#" class="soc">𝕏</a>
+        <a href="#" class="soc">ig</a><a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#biografia">Biografía</a></li>
+        <li><a href="index.html#trayectoria">Trayectoria</a></li>
+        <li><a href="index.html#enfoque">Mi Enfoque</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="convocatorias.html">Convocatorias</a></li>
+        <li><a href="index.html#convocatoria">Únete</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Propuestas</h5>
+      <ul>
+        <li><a href="#">Educación pública</a></li>
+        <li><a href="#">Seguridad ciudadana</a></li>
+        <li><a href="#">Economía inclusiva</a></li>
+        <li><a href="#">Salud para todos</a></li>
+        <li><a href="#">Vivienda digna</a></li>
+        <li><a href="#">Lucha anticorrupción</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="#">Lorem ipsum 441, Lima</a></li>
+        <li><a href="#">(01) 000-0000</a></li>
+        <li><a href="#">contacto@lucy2026.pe</a></li>
+        <li><a href="#">Plan de gobierno (PDF)</a></li>
+        <li><a href="#">Declaración jurada</a></li>
+        <li><a href="#">Prensa y medios</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucy Marleni Gonzales Diaz — Todos los derechos reservados.</p>
+    <p><a href="#">Privacidad</a> · <a href="#">Términos</a></p>
+  </div>
+</div>
+</footer>
+
+<a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="wa-float" aria-label="Únete">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+  <span class="wa-float-tooltip">¡Únete al movimiento!</span>
+</a>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobile() { mobileNav.classList.remove('open'); }
+  document.addEventListener('click', e => {
+    if (!burger.contains(e.target) && !mobileNav.contains(e.target)) closeMobile();
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

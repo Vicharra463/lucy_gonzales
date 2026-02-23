@@ -80,7 +80,7 @@ body {
   font-weight: 300;
 }
 
-/* ★ FIX GLOBAL: imágenes no se expanden fuera de su contenedor */
+
 img { display:block; max-width:100%; }
 
 .ph {
@@ -371,7 +371,6 @@ h2.title em {
 .bio-img-wrap { position: relative; }
 .bio-img {
   width: 100%;
-  aspect-ratio: 4/5;
   overflow: hidden;
 }
 .bio-img img {
@@ -753,7 +752,7 @@ blockquote {
 
 .wa-right { position:relative; }
 .wa-img-ph {
-  width: 100%; aspect-ratio: 6/5;
+  width: 100%;
   overflow: hidden;
 }
 .wa-img-ph img {

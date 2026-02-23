@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Perú atraviesa un momento decisivo — Blog Lucy Gonzalez</title>
+<link href="../style.css" rel="stylesheet">
+<style>
+  /* ══ HERO DEL ARTÍCULO ══════════════════════════════ */
+  .art-hero {
+    padding-top: var(--nav-h);
+    background: var(--dark);
+    border-bottom: 5px solid var(--yellow);
+  }
+  .art-hero-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3.5rem 5% 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    align-items: center;
+  }
+  .art-hero-cat {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: .58rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--dark); background: var(--yellow);
+    padding: .2rem .7rem; margin-bottom: 1.1rem;
+  }
+  .art-hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 900; color: var(--white);
+    line-height: 1.05; letter-spacing: -1px;
+    text-transform: uppercase; margin-bottom: 1.2rem;
+  }
+  .art-hero-title em {
+    font-family: var(--font-alt);
+    font-style: italic; font-weight: 700;
+    color: var(--yellow); text-transform: none; font-size: 1.05em;
+  }
+  .art-hero-meta {
+    display: flex; align-items: center; gap: 1.2rem;
+    flex-wrap: wrap;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+  .art-meta-item {
+    font-family: var(--font-head);
+    font-size: .62rem; font-weight: 500;
+    color: #666; text-transform: uppercase; letter-spacing: .8px;
+    display: flex; align-items: center; gap: .35rem;
+  }
+  .art-meta-dot {
+    width: 6px; height: 6px;
+    background: var(--yellow); flex-shrink: 0;
+  }
+  .art-hero-img {
+    width: 100%; aspect-ratio: 4/3;
+    overflow: hidden; border: 2px solid rgba(255,255,255,.1);
+    position: relative;
+  }
+  .art-hero-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block; opacity: .85;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 1rem 5%;
+    display: flex; align-items: center; gap: .5rem;
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: #555; border-bottom: 1px solid var(--gray-lt);
+    background: var(--white);
+  }
+  .breadcrumb a { color: #555; text-decoration: none; transition: color .2s; }
+  .breadcrumb a:hover { color: var(--dark); }
+  .breadcrumb span { font-size: .5rem; color: #bbb; }
+
+  /* ══ CONTENIDO ARTÍCULO ══════════════════════════════ */
+  .art-page {
+    background: var(--white);
+    padding: 4rem 0 5rem;
+  }
+  .art-page-inner {
+    max-width: var(--max-w);
+    margin: 0 auto; padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  /* Cuerpo del artículo */
+  .art-body { max-width: 680px; }
+
+  .art-lead {
+    font-family: var(--font-body);
+    font-size: 1.08rem; font-weight: 300;
+    color: var(--mid); line-height: 1.8;
+    padding-left: 1.2rem;
+    border-left: 5px solid var(--yellow);
+    margin-bottom: 2.2rem;
+  }
+
+  .art-body h2 {
+    font-family: var(--font-head);
+    font-size: 1.1rem; font-weight: 900;
+    color: var(--dark); text-transform: uppercase;
+    letter-spacing: -.3px; line-height: 1.2;
+    margin: 2.2rem 0 .8rem;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid var(--yellow);
+    display: inline-block;
+  }
+
+  .art-body p {
+    font-family: var(--font-body);
+    font-size: .93rem; font-weight: 300;
+    color: var(--mid); line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+  .art-body p strong { color: var(--dark); font-weight: 700; }
+
+  .art-body blockquote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.5rem;
+    border-left: 5px solid var(--yellow);
+    background: #FFFDE6;
+    font-family: var(--font-alt);
+    font-style: italic; font-size: 1.1rem;
+    color: var(--dark); line-height: 1.65; font-weight: 600;
+  }
+
+  .art-body ul {
+    margin: 1rem 0 1.5rem 0;
+    padding: 0; list-style: none;
+  }
+  .art-body ul li {
+    font-family: var(--font-body);
+    font-size: .92rem; font-weight: 300;
+    color: var(--mid); line-height: 1.75;
+    padding: .45rem 0 .45rem 1.3rem;
+    border-bottom: 1px solid var(--gray-lt);
+    position: relative;
+  }
+  .art-body ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 8px; height: 8px;
+    background: var(--yellow);
+    border: 1.5px solid var(--dark);
+  }
+
+  /* Imagen dentro del artículo */
+  .art-img-block {
+    margin: 2rem 0;
+    border: 2px solid var(--dark);
+    overflow: hidden;
+  }
+  .art-img-block img {
+    width: 100%; display: block;
+    aspect-ratio: 16/9; object-fit: cover;
+  }
+  .art-img-caption {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 500;
+    color: #888; text-transform: uppercase;
+    letter-spacing: 1px; padding: .5rem .8rem;
+    border-top: 1px solid var(--gray-lt);
+    background: var(--offwhite);
+  }
+
+  /* Datos clave */
+  .art-datos {
+    background: var(--dark);
+    border-left: 5px solid var(--yellow);
+    padding: 1.5rem 1.8rem;
+    margin: 2.2rem 0;
+  }
+  .art-datos-title {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: 1rem;
+  }
+  .art-datos-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1.2rem;
+  }
+  .art-dato-n {
+    font-family: var(--font-head);
+    font-size: 1.8rem; font-weight: 900;
+    color: var(--yellow); line-height: 1; letter-spacing: -1px;
+  }
+  .art-dato-l {
+    font-family: var(--font-body);
+    font-size: .65rem; color: #888;
+    font-weight: 400; margin-top: .2rem;
+    text-transform: uppercase; letter-spacing: .8px;
+  }
+
+  /* Tags del artículo */
+  .art-tags {
+    display: flex; flex-wrap: wrap; gap: .4rem;
+    margin: 2.5rem 0;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--gray-lt);
+  }
+  .art-tag {
+    font-family: var(--font-head);
+    font-size: .6rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--mid);
+    border: 1.5px solid var(--border);
+    padding: .2rem .65rem;
+  }
+
+  /* Autor */
+  .art-author {
+    display: flex; align-items: center; gap: 1.2rem;
+    padding: 1.5rem;
+    border: 2px solid var(--dark);
+    border-top: 4px solid var(--yellow);
+    margin-top: 2.5rem;
+    background: var(--offwhite);
+  }
+  .art-author-avatar {
+    width: 64px; height: 64px;
+    background: var(--yellow);
+    border: 2px solid var(--dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head);
+    font-size: 1.2rem; font-weight: 900;
+    color: var(--dark); flex-shrink: 0;
+    overflow: hidden;
+  }
+  .art-author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .art-author-name {
+    font-family: var(--font-head);
+    font-size: .85rem; font-weight: 900;
+    color: var(--dark); text-transform: uppercase;
+    letter-spacing: .3px; margin-bottom: .15rem;
+  }
+  .art-author-role {
+    font-family: var(--font-head);
+    font-size: .62rem; font-weight: 600;
+    color: var(--gray); text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: .4rem;
+  }
+  .art-author-bio {
+    font-size: .82rem; color: var(--mid);
+    font-weight: 300; line-height: 1.6;
+  }
+
+  /* ══ SIDEBAR ══════════════════════════════════════ */
+  .art-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .sidebar-box {
+    background: var(--white);
+    border: 2px solid var(--dark);
+    border-top: 4px solid var(--yellow);
+    overflow: hidden;
+  }
+  .sidebar-box-head {
+    padding: .7rem 1rem;
+    background: var(--dark);
+    font-family: var(--font-head);
+    font-size: .58rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--yellow);
+  }
+  .sidebar-box-body { padding: 1rem; }
+
+  /* Compartir */
+  .share-btns { display: flex; flex-direction: column; gap: .45rem; }
+  .share-btn {
+    display: flex; align-items: center; gap: .6rem;
+    font-family: var(--font-head);
+    font-size: .72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .5px;
+    text-decoration: none; padding: .6rem .9rem;
+    border: 2px solid var(--dark);
+    transition: all .2s; color: var(--dark);
+  }
+  .share-btn:hover { background: var(--yellow); }
+  .share-btn-wa { background: #25D366; color: #fff; border-color: #1a9e4f; }
+  .share-btn-wa:hover { background: #1EBE59; }
+
+  /* Artículos relacionados */
+  .related-list { display: flex; flex-direction: column; gap: .8rem; }
+  .related-item {
+    display: grid; grid-template-columns: 68px 1fr;
+    gap: .7rem; cursor: pointer;
+    padding-bottom: .8rem;
+    border-bottom: 1px solid var(--gray-lt);
+    transition: opacity .2s;
+  }
+  .related-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .related-item:hover { opacity: .75; }
+  .related-img {
+    width: 68px; height: 52px;
+    overflow: hidden; border: 1.5px solid var(--dark);
+    flex-shrink: 0;
+  }
+  .related-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .related-title {
+    font-family: var(--font-head);
+    font-size: .72rem; font-weight: 700;
+    color: var(--dark); line-height: 1.25;
+    text-transform: uppercase; letter-spacing: .1px;
+  }
+  .related-meta {
+    font-family: var(--font-head);
+    font-size: .58rem; color: var(--gray);
+    font-weight: 400; margin-top: .2rem;
+  }
+
+  /* Volver */
+  .art-back {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-family: var(--font-head);
+    font-size: .7rem; font-weight: 700;
+    color: var(--mid); text-decoration: none;
+    text-transform: uppercase; letter-spacing: .5px;
+    transition: color .2s;
+  }
+  .art-back:hover { color: var(--dark); }
+
+  @media (max-width:1024px) {
+    .art-hero-inner { grid-template-columns: 1fr; }
+    .art-hero-img { display: none; }
+    .art-page-inner { grid-template-columns: 1fr; }
+    .art-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width:768px) {
+    .art-datos-grid { grid-template-columns: 1fr 1fr; }
+    .art-sidebar { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="../header.png" alt="Lucy Gonzalez" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="../index.html#biografia">Biografía</a></li>
+    <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+    <li><a href="../index.html#enfoque">Mi Enfoque</a></li>
+    <li><a href="../index.html#galeria">Galería</a></li>
+    <li><a href="../blog.html" style="color:var(--dark);font-weight:800;border-bottom:2px solid var(--yellow)">Blog</a></li>
+    <li><a href="convocatorias.html">Convocatorias</a></li>
+    <li><a href="index.html#convocatoria">Únete</a></li>
+  </ul>
+  <a href="index.html#convocatoria" class="nav-cta">Unirse</a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html#inicio" onclick="closeMobile()">Inicio</a>
+  <a href="index.html#biografia" onclick="closeMobile()">Biografía</a>
+  <a href="index.html#trayectoria" onclick="closeMobile()">Trayectoria</a>
+  <a href="index.html#enfoque" onclick="closeMobile()">Mi Enfoque</a>
+  <a href="index.html#galeria" onclick="closeMobile()">Galería</a>
+  <a href="blog.html" onclick="closeMobile()">Blog</a>
+  <a href="convocatorias.html" onclick="closeMobile()">Convocatorias</a>
+  <a href="index.html#convocatoria" onclick="closeMobile()">Únete</a>
+</div>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="art-hero-inner fade">
+    <div>
+      <div class="art-hero-cat">Análisis</div>
+      <h1 class="art-hero-title">El Perú atraviesa un momento decisivo: estabilidad, diálogo y <em>bienestar para todos</em></h1>
+      <div class="art-hero-meta">
+        <div class="art-meta-item"><div class="art-meta-dot"></div>15 de febrero, 2026</div>
+        <div class="art-meta-item"><div class="art-meta-dot"></div>8 min de lectura</div>
+        <div class="art-meta-item"><div class="art-meta-dot"></div>Lucy Gonzalez</div>
+      </div>
+    </div>
+    <div class="art-hero-img">
+      <img src="blog-articulo-1.jpg" alt="El momento decisivo del Perú">
+    </div>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Inicio</a>
+  <span>›</span>
+  <a href="blog.html">Blog</a>
+  <span>›</span>
+  <span style="color:var(--dark)">El momento decisivo del Perú</span>
+</div>
+
+<!-- CONTENIDO -->
+<div class="art-page">
+<div class="art-page-inner">
+
+  <!-- Artículo -->
+  <article class="art-body fade">
+
+    <p class="art-lead">El Perú atraviesa nuevamente un momento de inestabilidad política que afecta el trabajo, la seguridad y la economía de miles de familias. Más allá de los partidos y candidatos, el país necesita autoridades responsables, instituciones fuertes y soluciones reales para los problemas de la gente.</p>
+
+    <h2>Un sistema que necesita renovarse</h2>
+
+    <p>Durante los últimos años, hemos visto cómo la clase política peruana ha priorizado sus intereses particulares sobre el bienestar colectivo. <strong>La rotación constante de presidentes, la fragmentación del Congreso y la debilidad institucional</strong> han generado un clima de desconfianza que daña directamente la economía y la calidad de vida de los ciudadanos.</p>
+
+    <p>La inestabilidad no es solo un problema político abstracto: se traduce en inversión que no llega, en empleos que no se crean, en obras que se paralizan. Cada crisis de gobernabilidad tiene un costo real para las familias peruanas que trabajan todos los días.</p>
+
+    <div class="art-datos">
+      <div class="art-datos-title">Datos clave del contexto</div>
+      <div class="art-datos-grid">
+        <div>
+          <div class="art-dato-n">6</div>
+          <div class="art-dato-l">presidentes en 10 años</div>
+        </div>
+        <div>
+          <div class="art-dato-n">72%</div>
+          <div class="art-dato-l">desconfianza en el Congreso</div>
+        </div>
+        <div>
+          <div class="art-dato-n">3.8%</div>
+          <div class="art-dato-l">crecimiento proyectado 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Lo que el proceso electoral debe representar</h2>
+
+    <p>Este proceso electoral debe ser una oportunidad para reflexionar y elegir pensando en el futuro del país, buscando estabilidad, diálogo y bienestar para todos. No se trata de votar por el candidato más carismático o el partido con mejor publicidad.</p>
+
+    <blockquote>
+      "La fórmula es clara: pueblo primero, resultado para todos. No hay otra manera de construir un Perú que funcione para todos, no solo para unos pocos."
+    </blockquote>
+
+    <p>Se trata de elegir a quienes han demostrado con hechos su compromiso con el servicio público, quienes tienen propuestas concretas y verificables, y quienes entienden que la política es un medio para transformar vidas, no un fin en sí mismo.</p>
+
+    <div class="art-img-block">
+      <img src="blog-articulo-2.jpg" alt="Trabajo de campo en distritos de Lima">
+      <div class="art-img-caption">Recorrido por distritos de Lima Norte · Enero 2026</div>
+    </div>
+
+    <h2>Tres ejes para la estabilidad que el Perú necesita</h2>
+
+    <p>Después de años de trabajo en gestión pública y de recorrer cientos de comunidades en Lima y regiones, identifico tres ejes fundamentales que cualquier gobierno responsable debe priorizar:</p>
+
+    <ul>
+      <li><strong>Instituciones fuertes e independientes:</strong> El Ministerio Público, el Poder Judicial y los organismos reguladores deben funcionar sin interferencia política. Sin instituciones sólidas, no hay estabilidad posible.</li>
+      <li><strong>Economía que incluya a todos:</strong> El crecimiento económico debe traducirse en mejores condiciones de vida para el trabajador informal, el pequeño agricultor, la madre que dirige un negocio familiar. No solo en cifras macroeconómicas.</li>
+      <li><strong>Servicios públicos que funcionen:</strong> Educación, salud y seguridad son derechos, no privilegios. Un Estado que no garantiza estos servicios básicos no está cumpliendo su razón de ser.</li>
+    </ul>
+
+    <h2>El 12 de abril: una decisión que importa</h2>
+
+    <p>El 12 de abril, los peruanos tienen la oportunidad de participar y aportar a un nuevo panorama para el país, ejerciendo un voto informado y responsable. <strong>No es solo el derecho a votar lo que está en juego, es el derecho a un Perú mejor.</strong></p>
+
+    <p>Como candidata al Senado por Lima, asumo el compromiso de trabajar por esa estabilidad, de ser una voz que exige resultados sin importar de qué sector político venga la propuesta, y de poner siempre el bienestar de la gente por encima de cualquier cálculo político.</p>
+
+    <div class="art-tags">
+      <div class="art-tag">Senado 2026</div>
+      <div class="art-tag">Análisis político</div>
+      <div class="art-tag">Estabilidad</div>
+      <div class="art-tag">Lima</div>
+      <div class="art-tag">Economía</div>
+      <div class="art-tag">Instituciones</div>
+    </div>
+
+    <div class="art-author">
+      <div class="art-author-avatar">
+        <img src="modal-secundario.png" alt="Lucy Gonzalez" onerror="this.style.display='none'">LG
+      </div>
+      <div>
+        <div class="art-author-name">Lucy Marleni Gonzalez Diaz</div>
+        <div class="art-author-role">Candidata al Senado · Lima 2026</div>
+        <div class="art-author-bio">Gestora pública con más de 15 años de experiencia en instituciones del Estado. Comprometida con la transparencia, la inclusión y el desarrollo sostenible del Perú.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="../blog.html" class="art-back">← Volver al blog</a>
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="art-sidebar">
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-head">Compartir artículo</div>
+      <div class="sidebar-box-body">
+        <div class="share-btns">
+          <a href="#" class="share-btn share-btn-wa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
+          <a href="#" class="share-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="#" class="share-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-head">Artículos relacionados</div>
+      <div class="sidebar-box-body">
+        <div class="related-list">
+          <div class="related-item" onclick="location.href='#'">
+            <div class="related-img"><img src="blog-articulo-2.jpg" alt="Educación"></div>
+            <div>
+              <div class="related-title">Mi plan para transformar la educación pública</div>
+              <div class="related-meta">10 feb · 5 min</div>
+            </div>
+          </div>
+          <div class="related-item" onclick="location.href='#'">
+            <div class="related-img"><img src="blog-articulo-3.jpg" alt="Seguridad"></div>
+            <div>
+              <div class="related-title">Seguridad ciudadana: lo que el Congreso no ha hecho</div>
+              <div class="related-meta">5 feb · 6 min</div>
+            </div>
+          </div>
+          <div class="related-item" onclick="location.href='#'">
+            <div class="related-img"><img src="propuesta-04.jpg" alt="Economía"></div>
+            <div>
+              <div class="related-title">La economía informal y las políticas inclusivas</div>
+              <div class="related-meta">28 ene · 4 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+</div>
+
+<footer>
+<div class="footer-inner">
+  <div class="footer-top">
+    <div class="fcol">
+      <span class="fb-name">Lucy Marleni Gonzales Diaz</span>
+      <span class="fb-sub">Candidata al Senado · Lima 2026</span>
+      <p class="fb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <div class="socials">
+        <a href="#" class="soc">f</a><a href="#" class="soc">𝕏</a>
+        <a href="#" class="soc">ig</a><a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#biografia">Biografía</a></li>
+        <li><a href="index.html#trayectoria">Trayectoria</a></li>
+        <li><a href="index.html#enfoque">Mi Enfoque</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="convocatorias.html">Convocatorias</a></li>
+        <li><a href="index.html#convocatoria">Únete</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Propuestas</h5>
+      <ul>
+        <li><a href="#">Educación pública</a></li>
+        <li><a href="#">Seguridad ciudadana</a></li>
+        <li><a href="#">Economía inclusiva</a></li>
+        <li><a href="#">Salud para todos</a></li>
+        <li><a href="#">Vivienda digna</a></li>
+        <li><a href="#">Lucha anticorrupción</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="#">Lorem ipsum 441, Lima</a></li>
+        <li><a href="#">(01) 000-0000</a></li>
+        <li><a href="#">contacto@lucy2026.pe</a></li>
+        <li><a href="#">Plan de gobierno (PDF)</a></li>
+        <li><a href="#">Declaración jurada</a></li>
+        <li><a href="#">Prensa y medios</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucy Marleni Gonzales Diaz — Todos los derechos reservados.</p>
+    <p><a href="#">Privacidad</a> · <a href="#">Términos</a></p>
+  </div>
+</div>
+</footer>
+
+<a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXX" target="_blank" class="wa-float" aria-label="Únete">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.874L.057 23.57a.75.75 0 00.918.919l5.82-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.827 1.003 1.02-3.735-.24-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+  <span class="wa-float-tooltip">¡Únete al movimiento!</span>
+</a>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobile() { mobileNav.classList.remove('open'); }
+  document.addEventListener('click', e => {
+    if (!burger.contains(e.target) && !mobileNav.contains(e.target)) closeMobile();
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
